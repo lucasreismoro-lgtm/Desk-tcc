@@ -41175,11 +41175,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lucas\\Downloads\\SegurançaRe\\SegurançaRe\\SegurançaRe.csproj",
+      "projectUniqueName": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\SegurançaRe\\SegurançaRe.csproj",
       "projectName": "SegurançaRe",
-      "projectPath": "C:\\Users\\lucas\\Downloads\\SegurançaRe\\SegurançaRe\\SegurançaRe.csproj",
+      "projectPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\SegurançaRe\\SegurançaRe.csproj",
       "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lucas\\Downloads\\SegurançaRe\\SegurançaRe\\obj\\",
+      "outputPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\SegurançaRe\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|c:\\users\\lucas\\onedrive\\documentos\\github\\desk-tcc\\seguran\u00E7are\\camerayolopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|solutionrelative:camerayolopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|c:\\users\\lucas\\onedrive\\documentos\\github\\desk-tcc\\seguran\u00E7are\\telausuario.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|solutionrelative:telausuario.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|c:\\users\\lucas\\onedrive\\documentos\\github\\desk-tcc\\seguran\u00E7are\\telausuario.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|solutionrelative:telausuario.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|c:\\users\\lucas\\onedrive\\documentos\\github\\desk-tcc\\seguran\u00E7are\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|solutionrelative:mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CameraYoloPage.xaml",
+              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\CameraYoloPage.xaml",
+              "RelativeDocumentMoniker": "CameraYoloPage.xaml",
+              "ToolTip": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\CameraYoloPage.xaml",
+              "RelativeToolTip": "CameraYoloPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-08-12T18:54:34.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "telausuario.xaml",
+              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\telausuario.xaml",
+              "RelativeDocumentMoniker": "telausuario.xaml",
+              "ToolTip": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\telausuario.xaml",
+              "RelativeToolTip": "telausuario.xaml",
+              "ViewState": "AgIAANMAAAAAAAAAAAAkwPkAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-08-12T18:52:30.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "telausuario.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\telausuario.xaml.cs",
+              "RelativeDocumentMoniker": "telausuario.xaml.cs",
+              "ToolTip": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\telausuario.xaml.cs",
+              "RelativeToolTip": "telausuario.xaml.cs",
+              "ViewState": "AgIAAHEBAAAAAAAAAAAkwIwBAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T18:51:33.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "MauiProgram.cs",
+              "ToolTip": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\MauiProgram.cs",
+              "RelativeToolTip": "MauiProgram.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-12T18:51:28.519Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

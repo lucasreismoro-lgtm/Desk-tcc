@@ -53,10 +53,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="CameraYoloPage.xaml.cs">
+	    <DependentUpon>CameraYoloPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="bemvindo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Cadastro.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="CameraYoloPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="telausuario.xaml">

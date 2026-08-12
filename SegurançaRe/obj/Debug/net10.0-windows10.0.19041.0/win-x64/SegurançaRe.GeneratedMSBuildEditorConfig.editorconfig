@@ -15,7 +15,7 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property.EntryPointFilePath = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SegurançaRe
-build_property.ProjectDir = C:\Users\lucas\Downloads\SegurançaRe\SegurançaRe\
+build_property.ProjectDir = C:\Users\lucas\OneDrive\Documentos\GitHub\Desk-tcc\SegurançaRe\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTAotOptimizerEnabled = true
@@ -29,7 +29,7 @@ build_property.CsWinRTUseWindowsUIXamlProjections = false
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/lucas/Downloads/SegurançaRe/SegurançaRe/App.xaml]
+[C:/Users/lucas/OneDrive/Documentos/GitHub/Desk-tcc/SegurançaRe/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SegurançaRe.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
@@ -39,7 +39,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Users/lucas/Downloads/SegurançaRe/SegurançaRe/AppShell.xaml]
+[C:/Users/lucas/OneDrive/Documentos/GitHub/Desk-tcc/SegurançaRe/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SegurançaRe.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
@@ -49,7 +49,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Users/lucas/Downloads/SegurançaRe/SegurançaRe/bemvindo.xaml]
+[C:/Users/lucas/OneDrive/Documentos/GitHub/Desk-tcc/SegurançaRe/bemvindo.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SegurançaRe.bemvindo.xaml
 build_metadata.AdditionalFiles.TargetPath = bemvindo.xaml
@@ -59,7 +59,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Users/lucas/Downloads/SegurançaRe/SegurançaRe/Cadastro.xaml]
+[C:/Users/lucas/OneDrive/Documentos/GitHub/Desk-tcc/SegurançaRe/Cadastro.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SegurançaRe.Cadastro.xaml
 build_metadata.AdditionalFiles.TargetPath = Cadastro.xaml
@@ -69,7 +69,17 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Users/lucas/Downloads/SegurançaRe/SegurançaRe/MainPage.xaml]
+[C:/Users/lucas/OneDrive/Documentos/GitHub/Desk-tcc/SegurançaRe/CameraYoloPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SegurançaRe.CameraYoloPage.xaml
+build_metadata.AdditionalFiles.TargetPath = CameraYoloPage.xaml
+build_metadata.AdditionalFiles.RelativePath = CameraYoloPage.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[C:/Users/lucas/OneDrive/Documentos/GitHub/Desk-tcc/SegurançaRe/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SegurançaRe.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
@@ -79,7 +89,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Users/lucas/Downloads/SegurançaRe/SegurançaRe/Resources/Styles/Colors.xaml]
+[C:/Users/lucas/OneDrive/Documentos/GitHub/Desk-tcc/SegurançaRe/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SegurançaRe.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
@@ -89,7 +99,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Users/lucas/Downloads/SegurançaRe/SegurançaRe/Resources/Styles/Styles.xaml]
+[C:/Users/lucas/OneDrive/Documentos/GitHub/Desk-tcc/SegurançaRe/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SegurançaRe.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
@@ -99,7 +109,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Users/lucas/Downloads/SegurançaRe/SegurançaRe/telausuario.xaml]
+[C:/Users/lucas/OneDrive/Documentos/GitHub/Desk-tcc/SegurançaRe/telausuario.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SegurançaRe.telausuario.xaml
 build_metadata.AdditionalFiles.TargetPath = telausuario.xaml

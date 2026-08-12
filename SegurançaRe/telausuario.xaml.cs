@@ -389,4 +389,15 @@ namespace SegurançaRe
             }
         }
     }
-}
+
+    private YoloSimulator _simuladorYolo = new YoloSimulator();
+
+        private async void BtnSimularCameraYolo_Clicked(object sender, EventArgs e)
+        {
+            // Se você tiver uma página dedicada para exibir a câmera:
+            // await Navigation.PushAsync(new CameraYoloPage());
+
+            // Ou se quiser iniciar a simulação direta em janela secundária:
+            await _simuladorYolo.IniciarSimulacaoAsync();
+        }
+    }
