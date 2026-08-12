@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SegurançaRe.Cadastro"
+             BackgroundColor="#0F172A">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" BackgroundColor="#1E293B" StrokeThickness="0" StrokeShape="Rectangle">
+            <Grid Margin="25" RowDefinitions="Auto, *">
+
+                <HorizontalStackLayout Grid.Row="0" Margin="0,20,0,0" Spacing="12" HorizontalOptions="Center">
+                    <Path Data="M20,2L4,9V20C4,20 4,26 20,30C36,26 36,20 36,20V9L20,2Z" Fill="#2563EB" WidthRequest="38" HeightRequest="38"/>
+                    <Label Text="SafeHome" TextColor="White" FontSize="24" FontAttributes="Bold" VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+
+                <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" Spacing="15" Padding="10">
+                    <Label Text="🔐 ÁREA RESTRITA" TextColor="#EF4444" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center" CharacterSpacing="1"/>
+                    <Label Text="Este painel é de uso exclusivo dos administradores do sistema de segurança residencial." 
+                           TextColor="#94A3B8" FontSize="13" HorizontalTextAlignment="Center" LineHeight="1.3"/>
+                </VerticalStackLayout>
+
+            </Grid>
+        </Border>
+
+        <ScrollView Grid.Column="1">
+            <VerticalStackLayout Padding="50,40" Spacing="30" VerticalOptions="Center">
+
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Autenticação de Administrador" TextColor="White" FontSize="36" FontAttributes="Bold"/>
+                    <Label Text="Insira suas credenciais administrativas para gerenciar o sistema global." TextColor="#94A3B8" FontSize="15"/>
+                </VerticalStackLayout>
+
+                <Border BackgroundColor="#1E293B" StrokeShape="RoundRectangle 16" StrokeThickness="0" Padding="45,40">
+                    <VerticalStackLayout Spacing="25">
+
+                        <Label Text="CREDENCIAIS DE ACESSO MASTER" TextColor="#38BDF8" FontAttributes="Bold" FontSize="13" CharacterSpacing="1"/>
+
+                        <Grid ColumnDefinitions="2*, *" ColumnSpacing="15">
+                            <VerticalStackLayout Grid.Column="0" Spacing="6">
+                                <Label Text="Nome do Administrador" TextColor="#CBD5E1" FontSize="13" FontAttributes="Bold"/>
+                                <Entry x:Name="TxtNomeAdmin" TextColor="White" BackgroundColor="#0F172A" HeightRequest="46" Placeholder="Ex: Lucas"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Column="1" Spacing="6">
+                                <Label Text="CPF do Admin" TextColor="#CBD5E1" FontSize="13" FontAttributes="Bold"/>
+                                <Entry x:Name="TxtCpfAdmin" TextColor="White" BackgroundColor="#0F172A" HeightRequest="46" Keyboard="Numeric" Placeholder="00000000000"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <Grid ColumnDefinitions="*, *" ColumnSpacing="15">
+                            <VerticalStackLayout Grid.Column="0" Spacing="6">
+                                <Label Text="Sua Senha Pessoal" TextColor="#CBD5E1" FontSize="13" FontAttributes="Bold"/>
+                                <Entry x:Name="TxtSenhaPessoal" TextColor="White" BackgroundColor="#0F172A" HeightRequest="46" IsPassword="True"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Column="1" Spacing="6">
+                                <Label Text="Senha Global do Sistema" TextColor="#F59E0B" FontSize="13" FontAttributes="Bold"/>
+                                <Entry x:Name="TxtSenhaGlobal" TextColor="White" BackgroundColor="#0F172A" HeightRequest="46" IsPassword="True" Placeholder="Chave dos 3 Admins"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <HorizontalStackLayout HorizontalOptions="End" Spacing="15" Margin="0,20,0,0">
+                            <Button Text="Limpar" BackgroundColor="#334155" TextColor="#E2E8F0" HeightRequest="46" Padding="25,0" Clicked="BtnLimpar_Clicked"/>
+                            <Button Text="🔓 ACESSAR PAINEL ADMIN" BackgroundColor="#2563EB" TextColor="White" FontAttributes="Bold" HeightRequest="46" Padding="35,0" Clicked="BtnLoginAdmin_Clicked"/>
+                        </HorizontalStackLayout>
+
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

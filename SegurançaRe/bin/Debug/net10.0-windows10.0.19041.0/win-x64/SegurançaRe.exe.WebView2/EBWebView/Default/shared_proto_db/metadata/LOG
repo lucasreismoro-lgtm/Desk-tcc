@@ -1,0 +1,4 @@
+2026/06/22-17:01:16.850 6624 Reusing MANIFEST C:\Users\lucas\Downloads\SegurançaRe\SegurançaRe\bin\Debug\net10.0-windows10.0.19041.0\win-x64\SegurançaRe.exe.WebView2\EBWebView\Default\shared_proto_db\metadata/MANIFEST-000001
+2026/06/22-17:01:16.851 6624 Recovering log #3
+2026/06/22-17:01:16.851 6624 (ignoring error) C:\Users\lucas\Downloads\SegurançaRe\SegurançaRe\bin\Debug\net10.0-windows10.0.19041.0\win-x64\SegurançaRe.exe.WebView2\EBWebView\Default\shared_proto_db\metadata/000003.log: dropping 2884 bytes; Corruption: checksum mismatch
+2026/06/22-17:01:16.851 6624 Reusing old log C:\Users\lucas\Downloads\SegurançaRe\SegurançaRe\bin\Debug\net10.0-windows10.0.19041.0\win-x64\SegurançaRe.exe.WebView2\EBWebView\Default\shared_proto_db\metadata/000003.log 

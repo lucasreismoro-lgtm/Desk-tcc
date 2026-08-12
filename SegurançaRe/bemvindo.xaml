@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SegurançaRe.bemvindo"
+             BackgroundColor="#0F172A"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+        <Grid.Background>
+            <RadialGradientBrush Center="0.5,0.3" Radius="0.8">
+                <GradientStop Color="#1E2640" Offset="0.0" />
+                <GradientStop Color="#0F172A" Offset="1.0" />
+            </RadialGradientBrush>
+        </Grid.Background>
+
+        <Grid RowDefinitions="Auto, *, Auto" Padding="30, 25, 30, 35">
+
+            <HorizontalStackLayout Grid.Row="0" HorizontalOptions="Center" Spacing="10" Margin="0,15,0,0">
+                <Grid WidthRequest="10" HeightRequest="10" VerticalOptions="Center">
+                    <Ellipse Fill="#22C55E" Opacity="0.4" WidthRequest="10" HeightRequest="10"/>
+                    <Ellipse Fill="#22C55E" WidthRequest="6" HeightRequest="6" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Grid>
+                <Label Text="SISTEMA SEGURO E OPERACIONAL" TextColor="#22C55E" FontSize="11" FontAttributes="Bold" CharacterSpacing="1.5" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" Spacing="30">
+
+                <Grid WidthRequest="180" HeightRequest="180" HorizontalOptions="Center">
+                    <Ellipse Fill="#2563EB" Opacity="0.15" WidthRequest="140" HeightRequest="140" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                    <Border StrokeThickness="1.5" BackgroundColor="Transparent" WidthRequest="150" HeightRequest="150" StrokeShape="RoundRectangle 75">
+                        <Border.Stroke>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#3B82F6" Offset="0.0"/>
+                                <GradientStop Color="Transparent" Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Border.Stroke>
+                    </Border>
+
+                    <Label Text="🛡️" FontSize="70" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,5"/>
+
+                    <Label Text="📹" FontSize="20" HorizontalOptions="Start" VerticalOptions="Start" Margin="15,25,0,0" Opacity="0.8"/>
+                    <Label Text="🔔" FontSize="18" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,20,25" Opacity="0.8"/>
+                </Grid>
+
+                <VerticalStackLayout Spacing="12" HorizontalOptions="Center">
+                    <Label Text="Security +"
+                           TextColor="#3B82F6"
+                           FontSize="42"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           CharacterSpacing="-0.5" />
+
+                    <Label Text="Proteja sua casa com inteligência"
+                           TextColor="#FFFFFF"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Text="Monitore câmeras, sensores e alarmes em tempo real de qualquer lugar."
+                           TextColor="#CBD5E1"
+                           FontSize="14"
+                           HorizontalTextAlignment="Center"
+                           Margin="20,0"
+                           LineHeight="1.3"/>
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="2" Spacing="20" VerticalOptions="End">
+
+                <Border StrokeThickness="0" BackgroundColor="#2563EB" StrokeShape="RoundRectangle 24" HeightRequest="56">
+                    <Grid ColumnDefinitions="*, Auto" Padding="25, 0">
+                        <Button Grid.ColumnSpan="2"
+                                Text="Entrar"
+                                BackgroundColor="Transparent"
+                                TextColor="#FFFFFF"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                HorizontalOptions="Fill"
+                                VerticalOptions="Fill"
+                                Clicked="BtnComeçar_Clicked"/>
+                        <Label Grid.Column="1" Text="➔" TextColor="#FFFFFF" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" InputTransparent="True"/>
+                    </Grid>
+                </Border>
+
+                <Label Text="Security + Platform • v1.0.0" TextColor="#475569" FontSize="11" HorizontalOptions="Center" CharacterSpacing="0.5"/>
+
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
