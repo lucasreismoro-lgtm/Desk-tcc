@@ -404,7 +404,7 @@ namespace SegurançaRe
             }
         }
 
-        private async void BtnSair_Clicked(object sender, EventArgs e) // Encerramento de sessão
+        private async void BtnSair_Clicked(object sender, EventArgs e)
         {
             bool confirmarSair = await DisplayAlert("Desconectar", "Tem certeza de que deseja fechar a sessão administrativa?", "Sim, Sair", "Cancelar");
 
@@ -412,18 +412,18 @@ namespace SegurançaRe
             {
                 try
                 {
-                    Application.Current.MainPage = new NavigationPage(new Cadastro());
+                    Application.Current.MainPage = new NavigationPage(new bemvindo());
                 }
                 catch (Exception ex)
                 {
-                    await DisplayAlert("Erro", "Não foi possível retornar para a tela de login: " + ex.Message, "OK");
+                    await DisplayAlert("Erro", "Não foi possível sair: " + ex.Message, "OK");
                 }
             }
         }
 
         private async void BtnSimularCameraYolo_Clicked(object sender, EventArgs e)
         {
-            await _simuladorYolo.IniciarSimulacaoAsync();
+            await Navigation.PushAsync(new CameraYoloPage());
         }
     }
 }

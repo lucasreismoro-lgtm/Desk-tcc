@@ -59,6 +59,10 @@
 	    <DependentUpon>CameraYoloPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
+	
+	<PropertyGroup>
+		<NoWarn>$(NoWarn);AD0001</NoWarn>
+	</PropertyGroup>
 
 	<ItemGroup>
 	  <MauiXaml Update="bemvindo.xaml">

@@ -7,6 +7,7 @@ using Microsoft.Maui.Controls;
 using Microsoft.Maui.Graphics;
 using Microsoft.ML.OnnxRuntime;
 using Microsoft.ML.OnnxRuntime.Tensors;
+using CommunityToolkit.Maui.Views;
 
 namespace SegurançaRe
 {
@@ -15,6 +16,9 @@ namespace SegurançaRe
         private InferenceSession? _onnxSession;
         private bool _isProcessingFrame = false;
 
+        // Instância reutilizável para o desenho (evita recriar a cada frame)
+        private readonly YoloDrawable _yoloDrawable = new();
+
         // Dimensões padrão exigidas pelo YOLOv8 / YOLOv11
         private const int TargetWidth = 640;
         private const int TargetHeight = 640;
@@ -22,6 +26,12 @@ namespace SegurançaRe
         public CameraYoloPage()
         {
             InitializeComponent();
+
+            // Vincula o Drawable no GraphicsView uma única vez
+            if (graphicsView != null)
+            {
+                graphicsView.Drawable = _yoloDrawable;
+            }
         }
 
         protected override async void OnAppearing()
@@ -56,7 +66,7 @@ namespace SegurançaRe
         }
 
         // ================= 2. PROCESSAR O FRAME DA CÂMERA =================
-        private async void OnMediaCaptured(object sender, CommunityToolkit.Maui.Views.MediaCapturedEventArgs e)
+        private async void OnMediaCaptured(object sender, MediaCapturedEventArgs e)
         {
             if (_onnxSession == null || _isProcessingFrame) return;
 
@@ -64,11 +74,16 @@ namespace SegurançaRe
 
             try
             {
-                // Usa o Stream vindo do evento do CommunityToolkit
+                // CORREÇÃO LINHA 78: Obtém o Stream usando e.Media (propriedade nativa do Toolkit)
                 using var imageStream = e.Media;
-                if (imageStream == null) return;
+                if (imageStream == null || imageStream.Length == 0) return;
 
-                var deteccoes = await Task.Run(() => ExecutarInferenciaYolo(imageStream));
+                // Copia para MemoryStream para permitir leitura segura em background
+                using var ms = new MemoryStream();
+                await imageStream.CopyToAsync(ms);
+                ms.Position = 0;
+
+                var deteccoes = await Task.Run(() => ExecutarInferenciaYolo(ms));
 
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
@@ -94,10 +109,14 @@ namespace SegurançaRe
 
             // Transforma a imagem no Tensor de entrada (1, 3, 640, 640)
             var inputTensor = CriarTensorDaImagem(streamImagem);
+            if (inputTensor == null) return listaDeteccoes;
+
+            // Nome da entrada padrão do YOLOv8
+            var inputName = _onnxSession.InputMetadata.Keys.FirstOrDefault() ?? "images";
 
             var inputs = new List<NamedOnnxValue>
             {
-                NamedOnnxValue.CreateFromTensor("images", inputTensor)
+                NamedOnnxValue.CreateFromTensor(inputName, inputTensor)
             };
 
             // Executa o modelo
@@ -111,13 +130,50 @@ namespace SegurançaRe
         }
 
         // ================= 4. PRÉ-PROCESSAMENTO DA IMAGEM =================
-        private DenseTensor<float> CriarTensorDaImagem(Stream stream)
+        private DenseTensor<float>? CriarTensorDaImagem(Stream stream)
         {
-            // Cria o formato de entrada [BatchSize, Canais RGB, Altura, Largura]
-            var tensor = new DenseTensor<float>(new[] { 1, 3, TargetHeight, TargetWidth });
+            try
+            {
+                byte[] bytes;
+                if (stream is MemoryStream ms)
+                {
+                    bytes = ms.ToArray();
+                }
+                else
+                {
+                    using var tempMs = new MemoryStream();
+                    stream.CopyTo(tempMs);
+                    bytes = tempMs.ToArray();
+                }
 
-            // Nota: Os valores dos pixels RGB (0 a 255) devem ser normalizados entre 0.0f e 1.0f
-            return tensor;
+                if (bytes.Length == 0) return null;
+
+                // Preenche o tensor [1, 3, 640, 640] normalizado (RGB 0.0 a 1.0)
+                var tensor = new DenseTensor<float>(new[] { 1, 3, TargetHeight, TargetWidth });
+
+                int totalPixels = TargetWidth * TargetHeight;
+                for (int i = 0; i < totalPixels; i++)
+                {
+                    int x = i % TargetWidth;
+                    int y = i / TargetWidth;
+
+                    // Mapeia os bytes do buffer para os canais R, G, B
+                    byte r = bytes.Length > i * 3 ? bytes[i * 3] : (byte)0;
+                    byte g = bytes.Length > i * 3 + 1 ? bytes[i * 3 + 1] : (byte)0;
+                    byte b = bytes.Length > i * 3 + 2 ? bytes[i * 3 + 2] : (byte)0;
+
+                    tensor[0, 0, y, x] = r / 255.0f; // R
+                    tensor[0, 1, y, x] = g / 255.0f; // G
+                    tensor[0, 2, y, x] = b / 255.0f; // B
+                }
+
+                return tensor;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Erro ao criar Tensor: {ex.Message}");
+                return null;
+            }
         }
 
         // ================= 5. PÓS-PROCESSAMENTO DAS CAIXAS =================
@@ -125,20 +181,19 @@ namespace SegurançaRe
         {
             var resultados = new List<DeteccaoYolo>();
 
-            // Limiar de confiança mínimo (ex: 50%)
+            // Limiar de confiança mínimo (50%)
             float minConfidence = 0.5f;
 
             // O formato padrão de saída do YOLOv8 é [1, 84, 8400]
-            // Onde 84 = [x, y, w, h + 80 classes]
-            int dimensions = output.Dimensions[1];
-            int anchors = output.Dimensions[2];
+            int dimensions = output.Dimensions[1]; // 84 (4 coords + 80 classes)
+            int anchors = output.Dimensions[2];    // 8400 caixas preditas
 
             for (int i = 0; i < anchors; i++)
             {
                 float maxScore = 0;
                 int classId = -1;
 
-                // Procura a classe com maior pontuação para esta caixa
+                // Procura a classe com maior pontuação
                 for (int c = 4; c < dimensions; c++)
                 {
                     float score = output[0, c, i];
@@ -168,7 +223,39 @@ namespace SegurançaRe
                 }
             }
 
-            return resultados;
+            return NmsSuppress(resultados); // Aplica Non-Maximum Suppression para remover caixas duplicadas
+        }
+
+        // Filtra caixas sobrepostas no mesmo objeto
+        private List<DeteccaoYolo> NmsSuppress(List<DeteccaoYolo> boxes)
+        {
+            var result = new List<DeteccaoYolo>();
+            var sorted = boxes.OrderByDescending(b => b.Confianca).ToList();
+
+            while (sorted.Count > 0)
+            {
+                var current = sorted[0];
+                result.Add(current);
+                sorted.RemoveAt(0);
+
+                sorted.RemoveAll(b => b.ClasseId == current.ClasseId && CalcularIoU(current, b) > 0.45f);
+            }
+
+            return result;
+        }
+
+        private float CalcularIoU(DeteccaoYolo a, DeteccaoYolo b)
+        {
+            float x1 = Math.Max(a.X, b.X);
+            float y1 = Math.Max(a.Y, b.Y);
+            float x2 = Math.Min(a.X + a.Largura, b.X + b.Largura);
+            float y2 = Math.Min(a.Y + a.Altura, b.Y + b.Altura);
+
+            float intersection = Math.Max(0, x2 - x1) * Math.Max(0, y2 - y1);
+            float areaA = a.Largura * a.Altura;
+            float areaB = b.Largura * b.Altura;
+
+            return intersection / (areaA + areaB - intersection);
         }
 
         // ================= 6. DESENHAR RETÂNGULOS NA TELA =================
@@ -176,8 +263,8 @@ namespace SegurançaRe
         {
             if (graphicsView == null) return;
 
-            // Atualiza a camada gráfica por cima do feed da câmera
-            graphicsView.Drawable = new YoloDrawable(deteccoes);
+            // Atualiza a lista interna de detecções e força o redesenho da tela
+            _yoloDrawable.Deteccoes = deteccoes;
             graphicsView.Invalidate();
 
             if (LblStatus != null)
@@ -203,23 +290,20 @@ namespace SegurançaRe
     // Desenha as caixas na tela usando Microsoft.Maui.Graphics
     public class YoloDrawable : IDrawable
     {
-        private readonly List<DeteccaoYolo> _deteccoes;
-
-        public YoloDrawable(List<DeteccaoYolo> deteccoes)
-        {
-            _deteccoes = deteccoes;
-        }
+        public List<DeteccaoYolo> Deteccoes { get; set; } = new();
 
         public void Draw(ICanvas canvas, RectF dirtyRect)
         {
-            canvas.StrokeColor = Colors.Green;
+            if (Deteccoes == null || Deteccoes.Count == 0) return;
+
+            canvas.StrokeColor = Colors.Red;
             canvas.StrokeSize = 3;
             canvas.FontColor = Colors.White;
             canvas.FontSize = 14;
 
-            foreach (var item in _deteccoes)
+            foreach (var item in Deteccoes)
             {
-                // Converte as coordenadas do YOLO (640x640) para a resolução da tela
+                // Converte as coordenadas da escala do YOLO (640x640) para o tamanho real da tela
                 float scaleX = dirtyRect.Width / 640f;
                 float scaleY = dirtyRect.Height / 640f;
 
@@ -228,14 +312,16 @@ namespace SegurançaRe
                 float rw = item.Largura * scaleX;
                 float rh = item.Altura * scaleY;
 
-                // Desenha a caixa delimitadora
+                // 1. Desenha a caixa delimitadora
                 canvas.DrawRectangle(rx, ry, rw, rh);
 
-                // Rótulo da classe com a porcentagem
+                // 2. Desenha o fundo da etiqueta
                 string label = $"Classe {item.ClasseId}: {item.Confianca * 100:F0}%";
+                canvas.FillColor = Colors.Red;
+                canvas.FillRectangle(rx, ry - 22, 140, 22);
 
-                // Desenha o texto formatado acima da caixa
-                canvas.DrawString(label, rx, ry - 20, rw, 20, HorizontalAlignment.Left, VerticalAlignment.Top);
+                // CORREÇÃO LINHA 326: Desenha o texto informando a posição (x, y) diretamente
+                canvas.DrawString(label, rx + 4, ry - 4, HorizontalAlignment.Left);
             }
         }
     }

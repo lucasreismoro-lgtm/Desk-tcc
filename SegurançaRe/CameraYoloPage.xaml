@@ -7,7 +7,9 @@
 
     <Grid>
         <toolkit:CameraView x:Name="cameraView"
-                            MediaCaptured="OnMediaCaptured"/>
+                            MediaCaptured="OnMediaCaptured"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill"/>
 
         <GraphicsView x:Name="graphicsView"
                       HorizontalOptions="Fill"
@@ -17,7 +19,7 @@
                Text="Inicializando YOLO..."
                TextColor="White"
                BackgroundColor="#80000000"
-               VerticalOptions="Top"
+               VerticalOptions="Start"
                HorizontalOptions="Center"
                Padding="10"
                Margin="10"/>
