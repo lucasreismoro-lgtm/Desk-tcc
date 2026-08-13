@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Microsoft.Maui.Controls;
 using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Controls;
 using Google.Cloud.Firestore;
 
 namespace SegurançaRe
@@ -40,11 +41,21 @@ namespace SegurançaRe
         public string Acao { get; set; } = string.Empty; // Descrição da ação executada
     }
 
-    // CÓDIGO LÓGICO DA TELA (CODE-BEHIND / CONTROLADOR)
+    // Adaptador/Simulador Yolo auxiliar
+    public class YoloSimulator
+    {
+        public async Task IniciarSimulacaoAsync()
+        {
+            await Task.Delay(100);
+        }
+    }
+
+    // === CÓDIGO LÓGICO DA TELA (CODE-BEHIND / CONTROLADOR) ===
 
     public partial class telausuario : ContentPage // Controlador associado ao layout XAML
     {
         private FirestoreDb? _db; // Instância de conexão do banco Firestore
+        private readonly YoloSimulator _simuladorYolo = new YoloSimulator();
 
         public telausuario() // Construtor da página
         {
@@ -226,30 +237,30 @@ namespace SegurançaRe
                 await docRef.SetAsync(novoUsuario); // Grava os dados do Dono no Firestore
 
                 // ====== 1. CRIAÇÃO AUTOMÁTICA DA SUBCOLEÇÃO "Sensores" ======
-                DocumentReference sensoresRef = docRef.Collection("Sensores").Document("estado"); // Caminho: Usuarios/{cpf}/Sensores/estado
+                DocumentReference sensoresRef = docRef.Collection("Sensores").Document("estado");
 
-                Dictionary<string, object> estadoInicialSensores = new Dictionary<string, object> // Estado padrão inicial dos switches
+                Dictionary<string, object> estadoInicialSensores = new Dictionary<string, object>
                 {
-                    { "presencaAtivo", false }, // Sensor de presença desligado por padrão
-                    { "calorAtivo", false },    // Sensor de calor desligado por padrão
-                    { "alarmeAtivo", false }    // Alarme sonoro desligado por padrão
+                    { "presencaAtivo", false },
+                    { "calorAtivo", false },
+                    { "alarmeAtivo", false }
                 };
 
-                await sensoresRef.SetAsync(estadoInicialSensores); // Grava documento dos sensores
+                await sensoresRef.SetAsync(estadoInicialSensores);
 
                 // ====== 2. CRIAÇÃO AUTOMÁTICA DA SUBCOLEÇÃO "Historico" ======
-                DocumentReference historicoRef = docRef.Collection("Historico").Document(); // Caminho: Usuarios/{cpf}/Historico/{ID_GERADO_AUTO}
+                DocumentReference historicoRef = docRef.Collection("Historico").Document();
 
                 Dictionary<string, object> eventoInicialHistorico = new Dictionary<string, object>
                 {
                     { "tipo", "SISTEMA" },
                     { "mensagem", "Sistema de segurança e registro de histórico inicializados." },
-                    { "dataHora", FieldValue.ServerTimestamp } // Data e hora atual do servidor Firestore
+                    { "dataHora", FieldValue.ServerTimestamp }
                 };
 
-                await historicoRef.SetAsync(eventoInicialHistorico); // Grava primeiro registro de histórico
+                await historicoRef.SetAsync(eventoInicialHistorico);
 
-                await DisplayAlert("Sucesso", $"Dono {nome} cadastrado com sucesso! Estruturas de Sensores e Histórico inicializadas.", "OK"); // Alerta confirmação
+                await DisplayAlert("Sucesso", $"Dono {nome} cadastrado com sucesso! Estruturas de Sensores e Histórico inicializadas.", "OK");
 
                 TxtNovoNome.Text = string.Empty; // Limpa os campos de texto
                 TxtNovoCpf.Text = string.Empty;
@@ -261,143 +272,158 @@ namespace SegurançaRe
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Erro ao Salvar", ex.Message, "OK"); // Captura erros no cadastro
+                await DisplayAlert("Erro ao Salvar", ex.Message, "OK");
             }
         }
 
         private async void BtnAdicionarMorador_Clicked(object sender, EventArgs e) // Cadastro de Morador dependente + E-mail
         {
-            if (_db == null) return; // Aborta sem banco
+            if (_db == null) return;
 
-            var botao = (Button)sender; // Mapeia o botão clicado
-            var donoSelecionado = botao.CommandParameter as DonoModel; // Captura a model do dono correspondente ao botão
+            var botao = (Button)sender;
+            var donoSelecionado = botao.CommandParameter as DonoModel;
 
             if (donoSelecionado == null) return;
 
-            string nomeMorador = await DisplayPromptAsync("Novo Morador", $"Adicionar morador na residência de {donoSelecionado.Nome}:"); // Prompt do Nome
-            if (string.IsNullOrWhiteSpace(nomeMorador)) return; // Aborta se vazio
+            string nomeMorador = await DisplayPromptAsync("Novo Morador", $"Adicionar morador na residência de {donoSelecionado.Nome}:");
+            if (string.IsNullOrWhiteSpace(nomeMorador)) return;
 
-            string emailMorador = await DisplayPromptAsync("Novo Morador", "Digite o E-mail do morador:", keyboard: Keyboard.Email); // Prompt do E-mail
-            if (string.IsNullOrWhiteSpace(emailMorador)) return; // Aborta se vazio
+            string emailMorador = await DisplayPromptAsync("Novo Morador", "Digite o E-mail do morador:", keyboard: Keyboard.Email);
+            if (string.IsNullOrWhiteSpace(emailMorador)) return;
 
-            string cpfInput = await DisplayPromptAsync("Novo Morador", "Digite o CPF do morador (Apenas números):", keyboard: Keyboard.Numeric); // Prompt do CPF
-            string cpfMoradorLimpo = Regex.Replace(cpfInput ?? "", @"[^\d]", ""); // Higieniza o CPF
+            string cpfInput = await DisplayPromptAsync("Novo Morador", "Digite o CPF do morador (Apenas números):", keyboard: Keyboard.Numeric);
+            string cpfMoradorLimpo = Regex.Replace(cpfInput ?? "", @"[^\d]", "");
 
-            if (cpfMoradorLimpo.Length != 11) // Valida tamanho do CPF
+            if (cpfMoradorLimpo.Length != 11)
             {
-                await DisplayAlert("Erro", "O CPF deve conter exatamente 11 dígitos.", "OK"); // Notifica falha do CPF
+                await DisplayAlert("Erro", "O CPF deve conter exatamente 11 dígitos.", "OK");
                 return;
             }
 
             try
             {
-                DocumentReference moradorRef = _db.Collection("Usuarios") // Referência da subcoleção Moradores do Dono selecionado
+                DocumentReference moradorRef = _db.Collection("Usuarios")
                                                    .Document(donoSelecionado.Cpf)
                                                    .Collection("Moradores")
                                                    .Document(cpfMoradorLimpo);
 
-                Dictionary<string, object> dadosMorador = new Dictionary<string, object> // Estrutura de dados do Morador
+                Dictionary<string, object> dadosMorador = new Dictionary<string, object>
                 {
-                    { "nome", nomeMorador.Trim() }, // Salva nome limpo
-                    { "cpf", cpfMoradorLimpo }, // Salva CPF numérico
-                    { "email", emailMorador.Trim().ToLower() }, // Salva o e-mail em minúsculas
-                    { "cargo", "morador" } // Perfil fixado
+                    { "nome", nomeMorador.Trim() },
+                    { "cpf", cpfMoradorLimpo },
+                    { "email", emailMorador.Trim().ToLower() },
+                    { "cargo", "morador" }
                 };
 
-                await moradorRef.SetAsync(dadosMorador); // Salva dependente no Firestore
+                await moradorRef.SetAsync(dadosMorador);
 
-                await DisplayAlert("Sucesso", $"Morador {nomeMorador} adicionado com e-mail cadastrado!", "OK"); // Confirma gravação
-                await CarregarDadosDashboard(); // Recarrega tela
+                await DisplayAlert("Sucesso", $"Morador {nomeMorador} adicionado com e-mail cadastrado!", "OK");
+                await CarregarDadosDashboard();
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Erro", "Falha ao vincular morador: " + ex.Message, "OK"); // Alerta de erro no processo
+                await DisplayAlert("Erro", "Falha ao vincular morador: " + ex.Message, "OK");
             }
         }
 
         private async void BtnRemoverDono_Clicked(object sender, EventArgs e) // Remoção física de Dono
         {
-            if (_db == null) return; // Aborta se sem banco
+            if (_db == null) return;
 
-            var botao = (Button)sender; // Mapeia o botão
-            string? cpfDonoParaRemover = botao.CommandParameter as string; // Resgata o CPF do dono via parâmetro
+            var botao = (Button)sender;
+            string? cpfDonoParaRemover = botao.CommandParameter as string;
 
             if (string.IsNullOrWhiteSpace(cpfDonoParaRemover)) return;
 
-            bool confirmar = await DisplayAlert("Excluir Dono", $"Tem certeza de que deseja remover o Dono com CPF {cpfDonoParaRemover}?", "Sim, Deletar", "Cancelar"); // Confirmação
+            bool confirmar = await DisplayAlert("Excluir Dono", $"Tem certeza de que deseja remover o Dono com CPF {cpfDonoParaRemover}?", "Sim, Deletar", "Cancelar");
 
             if (confirmar)
             {
                 try
                 {
-                    DocumentReference docRef = _db.Collection("Usuarios").Document(cpfDonoParaRemover); // Referência ao documento do dono
-                    await docRef.DeleteAsync(); // Executa exclusão no Firestore
+                    DocumentReference docRef = _db.Collection("Usuarios").Document(cpfDonoParaRemover);
+                    await docRef.DeleteAsync();
 
-                    await DisplayAlert("Sucesso", "Dono de Casa removido do sistema.", "OK"); // Exibe sucesso
-                    await CarregarDadosDashboard(); // Recarrega dashboard
+                    await DisplayAlert("Sucesso", "Dono de Casa removido do sistema.", "OK");
+                    await CarregarDadosDashboard();
                 }
                 catch (Exception ex)
                 {
-                    await DisplayAlert("Erro ao Remover", "Não foi possível remover o registro: " + ex.Message, "OK"); // Alerta falha na exclusão
+                    await DisplayAlert("Erro ao Remover", "Não foi possível remover o registro: " + ex.Message, "OK");
                 }
             }
         }
 
-        private async void BtnSair_Clicked(object sender, EventArgs e) // Encerramento de sessão
-        {
-            bool confirmarSair = await DisplayAlert("Desconectar", "Tem certeza de que deseja fechar a sessão administrativa?", "Sim, Sair", "Cancelar"); // Pop-up de saída
-
-            if (confirmarSair)
-            {
-                try
-                {
-                    Application.Current.MainPage = new NavigationPage(new Cadastro()); // Redireciona para a tela inicial/login
-                }
-                catch (Exception ex)
-                {
-                    await DisplayAlert("Erro", "Não foi possível retornar para a tela de login: " + ex.Message, "OK"); // Notifica falha na navegação
-                }
-            }
-        }
         private async void BtnRemoverMorador_Clicked(object sender, EventArgs e)
         {
+            if (_db == null) return;
+
             var button = sender as Button;
             var morador = button?.CommandParameter as MoradorModel;
 
             if (morador == null) return;
+
+            // Busca a model do Dono pai através do BindingContext do elemento ancestral
+            var parentView = button?.Parent as Element;
+            DonoModel? donoPai = null;
+
+            while (parentView != null)
+            {
+                if (parentView.BindingContext is DonoModel dono)
+                {
+                    donoPai = dono;
+                    break;
+                }
+                parentView = parentView.Parent;
+            }
+
+            if (donoPai == null || string.IsNullOrWhiteSpace(donoPai.Cpf))
+            {
+                await DisplayAlert("Erro", "Não foi possível localizar o Dono associado a este morador.", "OK");
+                return;
+            }
 
             bool confirmar = await DisplayAlert("Confirmação", $"Deseja remover o morador {morador.Nome}?", "Sim", "Não");
             if (!confirmar) return;
 
             try
             {
-                // Pega o dono (DonoModel) que é o BindingContext do Frame pai
-                var parentGrid = button.Parent as Grid;
-                var viewCell = parentGrid?.Parent;
+                DocumentReference moradorRef = _db.Collection("Usuarios")
+                                                  .Document(donoPai.Cpf)
+                                                  .Collection("Moradores")
+                                                  .Document(morador.Cpf);
 
-                // Exemplo de exclusão no Firestore (Ajuste o caminho conforme o seu serviço do Firebase):
-                // await firebaseService.DeletarMoradorAsync(cpfDono, morador.Cpf);
+                await moradorRef.DeleteAsync();
 
                 await DisplayAlert("Sucesso", "Morador removido com sucesso!", "OK");
-
-                // Recarregue a lista para atualizar a tela
-                // await CarregarDadosAsync();
+                await CarregarDadosDashboard();
             }
             catch (Exception ex)
             {
                 await DisplayAlert("Erro", $"Erro ao remover morador: {ex.Message}", "OK");
             }
         }
-    }
 
-    private YoloSimulator _simuladorYolo = new YoloSimulator();
+        private async void BtnSair_Clicked(object sender, EventArgs e) // Encerramento de sessão
+        {
+            bool confirmarSair = await DisplayAlert("Desconectar", "Tem certeza de que deseja fechar a sessão administrativa?", "Sim, Sair", "Cancelar");
+
+            if (confirmarSair)
+            {
+                try
+                {
+                    Application.Current.MainPage = new NavigationPage(new Cadastro());
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Erro", "Não foi possível retornar para a tela de login: " + ex.Message, "OK");
+                }
+            }
+        }
 
         private async void BtnSimularCameraYolo_Clicked(object sender, EventArgs e)
         {
-            // Se você tiver uma página dedicada para exibir a câmera:
-            // await Navigation.PushAsync(new CameraYoloPage());
-
-            // Ou se quiser iniciar a simulação direta em janela secundária:
             await _simuladorYolo.IniciarSimulacaoAsync();
         }
     }
+}
