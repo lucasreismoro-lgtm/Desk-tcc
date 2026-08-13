@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|c:\\users\\lucas\\onedrive\\documentos\\github\\desk-tcc\\seguran\u00E7are\\camerayolopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|solutionrelative:camerayolopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|c:\\users\\lucas\\onedrive\\documentos\\github\\desk-tcc\\seguran\u00E7are\\camerayolopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|solutionrelative:camerayolopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -31,19 +35,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CameraYoloPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\CameraYoloPage.xaml.cs",
+              "RelativeDocumentMoniker": "CameraYoloPage.xaml.cs",
+              "ToolTip": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\CameraYoloPage.xaml.cs",
+              "RelativeToolTip": "CameraYoloPage.xaml.cs",
+              "ViewState": "AgIAALAAAAAAAAAAAAAAwPEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-13T17:10:09.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "CameraYoloPage.xaml",
               "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\CameraYoloPage.xaml",
               "RelativeDocumentMoniker": "CameraYoloPage.xaml",
               "ToolTip": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\CameraYoloPage.xaml",
               "RelativeToolTip": "CameraYoloPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-08-12T18:54:34.824Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "telausuario.xaml",
               "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\telausuario.xaml",
               "RelativeDocumentMoniker": "telausuario.xaml",
@@ -56,7 +73,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "telausuario.xaml.cs",
               "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\telausuario.xaml.cs",
               "RelativeDocumentMoniker": "telausuario.xaml.cs",
@@ -69,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MauiProgram.cs",
               "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\MauiProgram.cs",
               "RelativeDocumentMoniker": "MauiProgram.cs",

@@ -2,6 +2,63 @@
   "version": 4,
   "targets": {
     "net10.0-android": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14",
+          "Xamarin.AndroidX.Camera.Camera2": "1.3.1.1",
+          "Xamarin.AndroidX.Camera.View": "1.3.1.1",
+          "Xamarin.AndroidX.Collection": "1.4.0.1",
+          "Xamarin.AndroidX.Collection.Ktx": "1.4.0.1",
+          "Xamarin.AndroidX.Lifecycle.LiveData": "2.7.0.1"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -599,6 +656,25 @@
         "build": {
           "buildTransitive/netstandard2.0/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/netstandard2.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -1326,6 +1402,134 @@
           "buildTransitive/net10.0-android35.0/Xamarin.AndroidX.Browser.targets": {}
         }
       },
+      "Xamarin.AndroidX.Camera.Camera2/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Core/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Annotation.Experimental": "1.4.0.1",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.ExifInterface": "1.3.7.1",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.AndroidX.Lifecycle.LiveData": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18",
+          "Xamarin.Kotlin.StdLib": "1.9.22.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Lifecycle/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Video/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.View/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Annotation.Experimental": "1.4.0.1",
+          "Xamarin.AndroidX.AppCompat": "1.6.1.7",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Camera.Lifecycle": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Camera.Video": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.View.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.View.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.View.targets": {}
+        }
+      },
       "Xamarin.AndroidX.CardView/1.0.0.36": {
         "type": "package",
         "dependencies": {
@@ -2837,6 +3041,19 @@
         },
         "build": {
           "buildTransitive/net10.0-android35.0/Xamarin.Google.Android.Material.targets": {}
+        }
+      },
+      "Xamarin.Google.AutoValue.Annotations/1.10.4.3": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.Google.AutoValue.Annotations.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.Google.AutoValue.Annotations.dll": {
+            "related": ".aar;.xml"
+          }
         }
       },
       "Xamarin.Google.Code.FindBugs.JSR305/3.0.2.21": {
@@ -3023,6 +3240,63 @@
       }
     },
     "net10.0-android/android-arm64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14",
+          "Xamarin.AndroidX.Camera.Camera2": "1.3.1.1",
+          "Xamarin.AndroidX.Camera.View": "1.3.1.1",
+          "Xamarin.AndroidX.Collection": "1.4.0.1",
+          "Xamarin.AndroidX.Collection.Ktx": "1.4.0.1",
+          "Xamarin.AndroidX.Lifecycle.LiveData": "2.7.0.1"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -3620,6 +3894,25 @@
         "build": {
           "buildTransitive/netstandard2.0/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/netstandard2.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -4270,6 +4563,134 @@
         },
         "build": {
           "buildTransitive/net10.0-android35.0/Xamarin.AndroidX.Browser.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Camera2/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Core/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Annotation.Experimental": "1.4.0.1",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.ExifInterface": "1.3.7.1",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.AndroidX.Lifecycle.LiveData": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18",
+          "Xamarin.Kotlin.StdLib": "1.9.22.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Lifecycle/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Video/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.View/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Annotation.Experimental": "1.4.0.1",
+          "Xamarin.AndroidX.AppCompat": "1.6.1.7",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Camera.Lifecycle": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Camera.Video": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.View.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.View.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.View.targets": {}
         }
       },
       "Xamarin.AndroidX.CardView/1.0.0.36": {
@@ -5783,6 +6204,19 @@
         },
         "build": {
           "buildTransitive/net10.0-android35.0/Xamarin.Google.Android.Material.targets": {}
+        }
+      },
+      "Xamarin.Google.AutoValue.Annotations/1.10.4.3": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.Google.AutoValue.Annotations.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.Google.AutoValue.Annotations.dll": {
+            "related": ".aar;.xml"
+          }
         }
       },
       "Xamarin.Google.Code.FindBugs.JSR305/3.0.2.21": {
@@ -5969,6 +6403,63 @@
       }
     },
     "net10.0-android/android-x64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14",
+          "Xamarin.AndroidX.Camera.Camera2": "1.3.1.1",
+          "Xamarin.AndroidX.Camera.View": "1.3.1.1",
+          "Xamarin.AndroidX.Collection": "1.4.0.1",
+          "Xamarin.AndroidX.Collection.Ktx": "1.4.0.1",
+          "Xamarin.AndroidX.Lifecycle.LiveData": "2.7.0.1"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -6566,6 +7057,25 @@
         "build": {
           "buildTransitive/netstandard2.0/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/netstandard2.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -7218,6 +7728,134 @@
           "buildTransitive/net10.0-android35.0/Xamarin.AndroidX.Browser.targets": {}
         }
       },
+      "Xamarin.AndroidX.Camera.Camera2/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Core/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Annotation.Experimental": "1.4.0.1",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.ExifInterface": "1.3.7.1",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.AndroidX.Lifecycle.LiveData": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18",
+          "Xamarin.Kotlin.StdLib": "1.9.22.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Lifecycle/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Video/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.View/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Annotation.Experimental": "1.4.0.1",
+          "Xamarin.AndroidX.AppCompat": "1.6.1.7",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Camera.Lifecycle": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Camera.Video": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.View.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.View.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.View.targets": {}
+        }
+      },
       "Xamarin.AndroidX.CardView/1.0.0.36": {
         "type": "package",
         "dependencies": {
@@ -8729,6 +9367,19 @@
         },
         "build": {
           "buildTransitive/net10.0-android35.0/Xamarin.Google.Android.Material.targets": {}
+        }
+      },
+      "Xamarin.Google.AutoValue.Annotations/1.10.4.3": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.Google.AutoValue.Annotations.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.Google.AutoValue.Annotations.dll": {
+            "related": ".aar;.xml"
+          }
         }
       },
       "Xamarin.Google.Code.FindBugs.JSR305/3.0.2.21": {
@@ -8915,6 +9566,63 @@
       }
     },
     "net10.0-android/iossimulator-x64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14",
+          "Xamarin.AndroidX.Camera.Camera2": "1.3.1.1",
+          "Xamarin.AndroidX.Camera.View": "1.3.1.1",
+          "Xamarin.AndroidX.Collection": "1.4.0.1",
+          "Xamarin.AndroidX.Collection.Ktx": "1.4.0.1",
+          "Xamarin.AndroidX.Lifecycle.LiveData": "2.7.0.1"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -9512,6 +10220,25 @@
         "build": {
           "buildTransitive/netstandard2.0/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/netstandard2.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -10162,6 +10889,134 @@
         },
         "build": {
           "buildTransitive/net10.0-android35.0/Xamarin.AndroidX.Browser.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Camera2/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Core/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Annotation.Experimental": "1.4.0.1",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.ExifInterface": "1.3.7.1",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.AndroidX.Lifecycle.LiveData": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18",
+          "Xamarin.Kotlin.StdLib": "1.9.22.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Lifecycle/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Video/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.View/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Annotation.Experimental": "1.4.0.1",
+          "Xamarin.AndroidX.AppCompat": "1.6.1.7",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Camera.Lifecycle": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Camera.Video": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.View.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.View.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.View.targets": {}
         }
       },
       "Xamarin.AndroidX.CardView/1.0.0.36": {
@@ -11675,6 +12530,19 @@
         },
         "build": {
           "buildTransitive/net10.0-android35.0/Xamarin.Google.Android.Material.targets": {}
+        }
+      },
+      "Xamarin.Google.AutoValue.Annotations/1.10.4.3": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.Google.AutoValue.Annotations.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.Google.AutoValue.Annotations.dll": {
+            "related": ".aar;.xml"
+          }
         }
       },
       "Xamarin.Google.Code.FindBugs.JSR305/3.0.2.21": {
@@ -11861,6 +12729,63 @@
       }
     },
     "net10.0-android/maccatalyst-x64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14",
+          "Xamarin.AndroidX.Camera.Camera2": "1.3.1.1",
+          "Xamarin.AndroidX.Camera.View": "1.3.1.1",
+          "Xamarin.AndroidX.Collection": "1.4.0.1",
+          "Xamarin.AndroidX.Collection.Ktx": "1.4.0.1",
+          "Xamarin.AndroidX.Lifecycle.LiveData": "2.7.0.1"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -12458,6 +13383,25 @@
         "build": {
           "buildTransitive/netstandard2.0/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/netstandard2.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -13108,6 +14052,134 @@
         },
         "build": {
           "buildTransitive/net10.0-android35.0/Xamarin.AndroidX.Browser.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Camera2/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Core/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Annotation.Experimental": "1.4.0.1",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.ExifInterface": "1.3.7.1",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.AndroidX.Lifecycle.LiveData": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18",
+          "Xamarin.Kotlin.StdLib": "1.9.22.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Lifecycle/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Video/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.View/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Annotation.Experimental": "1.4.0.1",
+          "Xamarin.AndroidX.AppCompat": "1.6.1.7",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Camera.Lifecycle": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Camera.Video": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.View.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.View.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.View.targets": {}
         }
       },
       "Xamarin.AndroidX.CardView/1.0.0.36": {
@@ -14623,6 +15695,19 @@
           "buildTransitive/net10.0-android35.0/Xamarin.Google.Android.Material.targets": {}
         }
       },
+      "Xamarin.Google.AutoValue.Annotations/1.10.4.3": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.Google.AutoValue.Annotations.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.Google.AutoValue.Annotations.dll": {
+            "related": ".aar;.xml"
+          }
+        }
+      },
       "Xamarin.Google.Code.FindBugs.JSR305/3.0.2.21": {
         "type": "package",
         "compile": {
@@ -14807,6 +15892,63 @@
       }
     },
     "net10.0-android/win-x64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14",
+          "Xamarin.AndroidX.Camera.Camera2": "1.3.1.1",
+          "Xamarin.AndroidX.Camera.View": "1.3.1.1",
+          "Xamarin.AndroidX.Collection": "1.4.0.1",
+          "Xamarin.AndroidX.Collection.Ktx": "1.4.0.1",
+          "Xamarin.AndroidX.Lifecycle.LiveData": "2.7.0.1"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -15404,6 +16546,25 @@
         "build": {
           "buildTransitive/netstandard2.0/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/netstandard2.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".aar;.pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -16063,6 +17224,134 @@
           "buildTransitive/net10.0-android35.0/Xamarin.AndroidX.Browser.targets": {}
         }
       },
+      "Xamarin.AndroidX.Camera.Camera2/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Core/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Annotation.Experimental": "1.4.0.1",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.ExifInterface": "1.3.7.1",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.AndroidX.Lifecycle.LiveData": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18",
+          "Xamarin.Kotlin.StdLib": "1.9.22.1"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Lifecycle/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.Video/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.targets": {}
+        }
+      },
+      "Xamarin.AndroidX.Camera.View/1.3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Annotation": "1.7.1.1",
+          "Xamarin.AndroidX.Annotation.Experimental": "1.4.0.1",
+          "Xamarin.AndroidX.AppCompat": "1.6.1.7",
+          "Xamarin.AndroidX.Camera.Core": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Camera.Lifecycle": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Camera.Video": "[1.3.1.1, 1.3.2)",
+          "Xamarin.AndroidX.Concurrent.Futures": "1.1.0.18",
+          "Xamarin.AndroidX.Core": "1.12.0.4",
+          "Xamarin.AndroidX.Lifecycle.Common": "2.7.0.1",
+          "Xamarin.Google.AutoValue.Annotations": "1.10.4.3",
+          "Xamarin.Google.Guava.ListenableFuture": "1.0.0.18"
+        },
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.View.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.View.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.View.targets": {}
+        }
+      },
       "Xamarin.AndroidX.CardView/1.0.0.36": {
         "type": "package",
         "dependencies": {
@@ -17576,6 +18865,19 @@
           "buildTransitive/net10.0-android35.0/Xamarin.Google.Android.Material.targets": {}
         }
       },
+      "Xamarin.Google.AutoValue.Annotations/1.10.4.3": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0-android33.0/Xamarin.Google.AutoValue.Annotations.dll": {
+            "related": ".aar;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0-android33.0/Xamarin.Google.AutoValue.Annotations.dll": {
+            "related": ".aar;.xml"
+          }
+        }
+      },
       "Xamarin.Google.Code.FindBugs.JSR305/3.0.2.21": {
         "type": "package",
         "compile": {
@@ -17760,6 +19062,58 @@
       }
     },
     "net10.0-ios": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -18341,6 +19695,25 @@
         "build": {
           "buildTransitive/net6.0-ios10.0/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/net6.0-ios10.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -18761,6 +20134,58 @@
       }
     },
     "net10.0-ios/android-arm64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -19342,6 +20767,25 @@
         "build": {
           "buildTransitive/net6.0-ios10.0/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/net6.0-ios10.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -19687,6 +21131,58 @@
       }
     },
     "net10.0-ios/android-x64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -20268,6 +21764,25 @@
         "build": {
           "buildTransitive/net6.0-ios10.0/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/net6.0-ios10.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -20613,6 +22128,58 @@
       }
     },
     "net10.0-ios/iossimulator-x64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -21194,6 +22761,25 @@
         "build": {
           "buildTransitive/net6.0-ios10.0/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/net6.0-ios10.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -21539,6 +23125,58 @@
       }
     },
     "net10.0-ios/maccatalyst-x64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -22120,6 +23758,25 @@
         "build": {
           "buildTransitive/net6.0-ios10.0/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/net6.0-ios10.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -22465,6 +24122,58 @@
       }
     },
     "net10.0-ios/win-x64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -23046,6 +24755,25 @@
         "build": {
           "buildTransitive/net6.0-ios10.0/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/net6.0-ios10.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-ios17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -23398,6 +25126,58 @@
       }
     },
     "net10.0-maccatalyst": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -23979,6 +25759,25 @@
         "build": {
           "buildTransitive/net6.0-maccatalyst13.1/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/net6.0-maccatalyst13.1/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -24399,6 +26198,58 @@
       }
     },
     "net10.0-maccatalyst/android-arm64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -24980,6 +26831,25 @@
         "build": {
           "buildTransitive/net6.0-maccatalyst13.1/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/net6.0-maccatalyst13.1/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -25325,6 +27195,58 @@
       }
     },
     "net10.0-maccatalyst/android-x64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -25906,6 +27828,25 @@
         "build": {
           "buildTransitive/net6.0-maccatalyst13.1/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/net6.0-maccatalyst13.1/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -26251,6 +28192,58 @@
       }
     },
     "net10.0-maccatalyst/iossimulator-x64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -26832,6 +28825,25 @@
         "build": {
           "buildTransitive/net6.0-maccatalyst13.1/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/net6.0-maccatalyst13.1/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -27177,6 +29189,58 @@
       }
     },
     "net10.0-maccatalyst/maccatalyst-x64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -27758,6 +29822,25 @@
         "build": {
           "buildTransitive/net6.0-maccatalyst13.1/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/net6.0-maccatalyst13.1/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -28103,6 +30186,58 @@
       }
     },
     "net10.0-maccatalyst/win-x64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -28684,6 +30819,25 @@
         "build": {
           "buildTransitive/net6.0-maccatalyst13.1/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/net6.0-maccatalyst13.1/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-maccatalyst17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-maccatalyst17.2/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -29036,6 +31190,59 @@
       }
     },
     "net10.0-windows10.0.19041.0": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14",
+          "System.Speech": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -29660,6 +31867,25 @@
         "build": {
           "buildTransitive/net6.0-windows10.0.17763.0/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/net6.0-windows10.0.17763.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -30289,9 +32515,80 @@
         "build": {
           "buildTransitive/net6.0-windows10.0.19041/_._": {}
         }
+      },
+      "System.Speech/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Speech.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/System.Speech.dll": {}
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Speech.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
       }
     },
     "net10.0-windows10.0.19041.0/android-arm64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14",
+          "System.Speech": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -30904,6 +33201,25 @@
           "buildTransitive/net6.0-windows10.0.17763.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
         }
       },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Core/10.0.20": {
         "type": "package",
         "dependencies": {
@@ -31407,10 +33723,75 @@
         ],
         "build": {
           "buildTransitive/net6.0-windows10.0.19041/_._": {}
+        }
+      },
+      "System.Speech/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Speech.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/System.Speech.dll": {}
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
     "net10.0-windows10.0.19041.0/android-x64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14",
+          "System.Speech": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -32021,6 +34402,25 @@
         "build": {
           "buildTransitive/net6.0-windows10.0.17763.0/Microsoft.Maui.Controls.Build.Tasks.props": {},
           "buildTransitive/net6.0-windows10.0.17763.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -32527,9 +34927,74 @@
         "build": {
           "buildTransitive/net6.0-windows10.0.19041/_._": {}
         }
+      },
+      "System.Speech/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Speech.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/System.Speech.dll": {}
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
       }
     },
     "net10.0-windows10.0.19041.0/iossimulator-x64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14",
+          "System.Speech": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -33142,6 +35607,25 @@
           "buildTransitive/net6.0-windows10.0.17763.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
         }
       },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Core/10.0.20": {
         "type": "package",
         "dependencies": {
@@ -33645,10 +36129,75 @@
         ],
         "build": {
           "buildTransitive/net6.0-windows10.0.19041/_._": {}
+        }
+      },
+      "System.Speech/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Speech.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/System.Speech.dll": {}
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
     "net10.0-windows10.0.19041.0/maccatalyst-x64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14",
+          "System.Speech": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -34261,6 +36810,25 @@
           "buildTransitive/net6.0-windows10.0.17763.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
         }
       },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Core/10.0.20": {
         "type": "package",
         "dependencies": {
@@ -34765,9 +37333,74 @@
         "build": {
           "buildTransitive/net6.0-windows10.0.19041/_._": {}
         }
+      },
+      "System.Speech/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Speech.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/System.Speech.dll": {}
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
       }
     },
     "net10.0-windows10.0.19041.0/win-x64": {
+      "CommunityToolkit.Maui/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "9.0.0",
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Camera/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.14",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Camera.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.14",
+          "Microsoft.Maui.Essentials": "8.0.14",
+          "System.Speech": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "FirebaseAdmin/3.5.0": {
         "type": "package",
         "dependencies": {
@@ -35383,6 +38016,25 @@
           "buildTransitive/net6.0-windows10.0.17763.0/Microsoft.Maui.Controls.Build.Tasks.targets": {}
         }
       },
+      "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
+          "Microsoft.Maui.Controls.Core": "8.0.14",
+          "Microsoft.Maui.Controls.Xaml": "8.0.14"
+        },
+        "compile": {
+          "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.dll": {
+            "related": ".pdb;.pri;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Core/10.0.20": {
         "type": "package",
         "dependencies": {
@@ -35901,10 +38553,102 @@
         "build": {
           "buildTransitive/net6.0-windows10.0.19041/_._": {}
         }
+      },
+      "System.Speech/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Speech.dll": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/net8.0/System.Speech.dll": {}
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
       }
     }
   },
   "libraries": {
+    "CommunityToolkit.Maui/9.0.0": {
+      "sha512": "G1z3FFAokpu18rDt4L2SZj827xIzqOv7PLq54Lxx46/57zUa8QjVTRTowl6s1qAeSW9r4XyFwnTb1sY1KOnzWg==",
+      "type": "package",
+      "path": "communitytoolkit.maui/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ReadMe.txt",
+        "analyzers/dotnet/cs/CommunityToolkit.Maui.Analyzers.CodeFixes.dll",
+        "analyzers/dotnet/cs/CommunityToolkit.Maui.Analyzers.dll",
+        "analyzers/dotnet/cs/CommunityToolkit.Maui.SourceGenerators.dll",
+        "communitytoolkit.maui.9.0.0.nupkg.sha512",
+        "communitytoolkit.maui.nuspec",
+        "icon.png",
+        "lib/net8.0-android34.0/CommunityToolkit.Maui.dll",
+        "lib/net8.0-android34.0/CommunityToolkit.Maui.xml",
+        "lib/net8.0-ios17.2/CommunityToolkit.Maui.dll",
+        "lib/net8.0-ios17.2/CommunityToolkit.Maui.xml",
+        "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.dll",
+        "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.xml",
+        "lib/net8.0-tizen8.0/CommunityToolkit.Maui.dll",
+        "lib/net8.0-tizen8.0/CommunityToolkit.Maui.xml",
+        "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.dll",
+        "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.xml",
+        "lib/net8.0/CommunityToolkit.Maui.dll",
+        "lib/net8.0/CommunityToolkit.Maui.xml"
+      ]
+    },
+    "CommunityToolkit.Maui.Camera/1.0.2": {
+      "sha512": "hRXH0DGrxHTx5Bt2WzTX2rEwwUAsCVKSeGsmZySXVu8KhIxclj+3HCLdvlkw+IL3ITIuE4CYXeVg6u+8uBcZrw==",
+      "type": "package",
+      "path": "communitytoolkit.maui.camera/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ReadMe.txt",
+        "analyzers/dotnet/cs/CommunityToolkit.Maui.Camera.Analyzers.CodeFixes.dll",
+        "analyzers/dotnet/cs/CommunityToolkit.Maui.Camera.Analyzers.dll",
+        "communitytoolkit.maui.camera.1.0.2.nupkg.sha512",
+        "communitytoolkit.maui.camera.nuspec",
+        "icon.png",
+        "lib/net8.0-android34.0/CommunityToolkit.Maui.Camera.dll",
+        "lib/net8.0-android34.0/CommunityToolkit.Maui.Camera.xml",
+        "lib/net8.0-ios17.2/CommunityToolkit.Maui.Camera.dll",
+        "lib/net8.0-ios17.2/CommunityToolkit.Maui.Camera.xml",
+        "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Camera.dll",
+        "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Camera.xml",
+        "lib/net8.0-tizen8.0/CommunityToolkit.Maui.Camera.dll",
+        "lib/net8.0-tizen8.0/CommunityToolkit.Maui.Camera.xml",
+        "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Camera.dll",
+        "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Camera.xml",
+        "lib/net8.0/CommunityToolkit.Maui.Camera.dll",
+        "lib/net8.0/CommunityToolkit.Maui.Camera.xml"
+      ]
+    },
+    "CommunityToolkit.Maui.Core/9.0.0": {
+      "sha512": "wzOYHQPs5yokoYyoCm2Ri5RDEkDmnvSklotzp0M4jfOE5M0ZPmCDvEVUJpVzZR9J5cudPlsL3Hh1cK3QzQd2NQ==",
+      "type": "package",
+      "path": "communitytoolkit.maui.core/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ReadMe.txt",
+        "communitytoolkit.maui.core.9.0.0.nupkg.sha512",
+        "communitytoolkit.maui.core.nuspec",
+        "icon.png",
+        "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.dll",
+        "lib/net8.0-android34.0/CommunityToolkit.Maui.Core.xml",
+        "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.dll",
+        "lib/net8.0-ios17.2/CommunityToolkit.Maui.Core.xml",
+        "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.dll",
+        "lib/net8.0-maccatalyst17.2/CommunityToolkit.Maui.Core.xml",
+        "lib/net8.0-tizen8.0/CommunityToolkit.Maui.Core.dll",
+        "lib/net8.0-tizen8.0/CommunityToolkit.Maui.Core.xml",
+        "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll",
+        "lib/net8.0-windows10.0.19041/CommunityToolkit.Maui.Core.xml",
+        "lib/net8.0/CommunityToolkit.Maui.Core.dll",
+        "lib/net8.0/CommunityToolkit.Maui.Core.xml"
+      ]
+    },
     "FirebaseAdmin/3.5.0": {
       "sha512": "NL9dWvrGCbgu3VxumjpHXgHsagQswntJNLtgVIgTF/y2ro6e6UpvFuZrlfjsMTzRXJEXqnse3U5rN/6HC5TlFA==",
       "type": "package",
@@ -36965,6 +39709,51 @@
         "buildTransitive/netstandard2.0/zh-Hant/Microsoft.Maui.Controls.Build.Tasks.resources.dll",
         "microsoft.maui.controls.build.tasks.10.0.20.nupkg.sha512",
         "microsoft.maui.controls.build.tasks.nuspec"
+      ]
+    },
+    "Microsoft.Maui.Controls.Compatibility/8.0.14": {
+      "sha512": "XeDdpsxQHhwbAlT8W5R6QBNpRa8Z31nqE/IXuchYW/Q4a6O+OlZS01LxdhhcLvWy2qGnx2hRIYvojdFTpAvnfA==",
+      "type": "package",
+      "path": "microsoft.maui.controls.compatibility/8.0.14",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "README.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "icon.png",
+        "lib/net8.0-android34.0/Microsoft.Maui.Controls.Compatibility.aar",
+        "lib/net8.0-android34.0/Microsoft.Maui.Controls.Compatibility.dll",
+        "lib/net8.0-android34.0/Microsoft.Maui.Controls.Compatibility.pdb",
+        "lib/net8.0-android34.0/Microsoft.Maui.Controls.Compatibility.xml",
+        "lib/net8.0-ios17.2/Microsoft.Maui.Controls.Compatibility.dll",
+        "lib/net8.0-ios17.2/Microsoft.Maui.Controls.Compatibility.pdb",
+        "lib/net8.0-ios17.2/Microsoft.Maui.Controls.Compatibility.xml",
+        "lib/net8.0-maccatalyst17.2/Microsoft.Maui.Controls.Compatibility.dll",
+        "lib/net8.0-maccatalyst17.2/Microsoft.Maui.Controls.Compatibility.pdb",
+        "lib/net8.0-maccatalyst17.2/Microsoft.Maui.Controls.Compatibility.xml",
+        "lib/net8.0-tizen8.0/Microsoft.Maui.Controls.Compatibility.dll",
+        "lib/net8.0-tizen8.0/Microsoft.Maui.Controls.Compatibility.pdb",
+        "lib/net8.0-tizen8.0/Microsoft.Maui.Controls.Compatibility.xml",
+        "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.dll",
+        "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.pdb",
+        "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.pri",
+        "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.xml",
+        "lib/net8.0-windows10.0.20348/Microsoft.Maui.Controls.Compatibility.dll",
+        "lib/net8.0-windows10.0.20348/Microsoft.Maui.Controls.Compatibility.pdb",
+        "lib/net8.0-windows10.0.20348/Microsoft.Maui.Controls.Compatibility.pri",
+        "lib/net8.0-windows10.0.20348/Microsoft.Maui.Controls.Compatibility.xml",
+        "lib/net8.0/Microsoft.Maui.Controls.Compatibility.dll",
+        "lib/net8.0/Microsoft.Maui.Controls.Compatibility.pdb",
+        "lib/net8.0/Microsoft.Maui.Controls.Compatibility.xml",
+        "lib/netstandard2.0/Microsoft.Maui.Controls.Compatibility.dll",
+        "lib/netstandard2.0/Microsoft.Maui.Controls.Compatibility.pdb",
+        "lib/netstandard2.0/Microsoft.Maui.Controls.Compatibility.xml",
+        "lib/netstandard2.1/Microsoft.Maui.Controls.Compatibility.dll",
+        "lib/netstandard2.1/Microsoft.Maui.Controls.Compatibility.pdb",
+        "lib/netstandard2.1/Microsoft.Maui.Controls.Compatibility.xml",
+        "microsoft.maui.controls.compatibility.8.0.14.nupkg.sha512",
+        "microsoft.maui.controls.compatibility.nuspec"
       ]
     },
     "Microsoft.Maui.Controls.Core/10.0.20": {
@@ -38744,6 +41533,32 @@
         "system.reactive.nuspec"
       ]
     },
+    "System.Speech/8.0.0": {
+      "sha512": "CNuiA6vb95Oe5PRjClZEBiaju31vwB8OIeCgeSBXyZL6+MS4RVVB2X/C11z0xCkooHE3Vy91nM2z76emIzR+sg==",
+      "type": "package",
+      "path": "system.speech/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Speech.targets",
+        "lib/net462/_._",
+        "lib/net6.0/System.Speech.dll",
+        "lib/net7.0/System.Speech.dll",
+        "lib/net8.0/System.Speech.dll",
+        "lib/netstandard2.0/System.Speech.dll",
+        "runtimes/win/lib/net6.0/System.Speech.dll",
+        "runtimes/win/lib/net7.0/System.Speech.dll",
+        "runtimes/win/lib/net8.0/System.Speech.dll",
+        "system.speech.8.0.0.nupkg.sha512",
+        "system.speech.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "Xamarin.Android.Glide/4.16.0.14": {
       "sha512": "zoo2thzoKv5SuY9PeB3Iaf41L7P4Z0jyPRMLUrb5u35KPHgWyQvj9hBablvtaFXuZIMMYyctwkHJwc4a4NPEKA==",
       "type": "package",
@@ -39097,6 +41912,163 @@
         "readme.md",
         "xamarin.androidx.browser.1.8.0.11.nupkg.sha512",
         "xamarin.androidx.browser.nuspec"
+      ]
+    },
+    "Xamarin.AndroidX.Camera.Camera2/1.3.1.1": {
+      "sha512": "Dbq2GGAFZoMefpsCKkdWZIGkXIaLT/HPVxkycSZT7+uBUOWQLbZOXA/eeFfIlqy6/ZCSe1o67Orcm8gmYV0E5w==",
+      "type": "package",
+      "path": "xamarin.androidx.camera.camera2/1.3.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "aar/androidx.camera.camera-camera2.aar",
+        "build/monoandroid12.0/Xamarin.AndroidX.Camera.Camera2.targets",
+        "build/net6.0-android31.0/Xamarin.AndroidX.Camera.Camera2.targets",
+        "build/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.Camera.Camera2.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Camera.Camera2.targets",
+        "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.targets",
+        "icon.png",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Camera.Camera2.dll",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Camera.Camera2.pdb",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Camera.Camera2.xml",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Camera.Camera2.dll",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Camera.Camera2.pdb",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Camera.Camera2.xml",
+        "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.dll",
+        "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.pdb",
+        "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Camera2.xml",
+        "proguard/proguard.txt",
+        "readme.md",
+        "xamarin.androidx.camera.camera2.1.3.1.1.nupkg.sha512",
+        "xamarin.androidx.camera.camera2.nuspec"
+      ]
+    },
+    "Xamarin.AndroidX.Camera.Core/1.3.1.1": {
+      "sha512": "EGWg9taJ3DwG4fgFkiFdMSyyMTU75KL12s8NH2zIFEm2M188eVrTM6H7dX29fzNX0w34ExFLsblNPbq5+Nmwow==",
+      "type": "package",
+      "path": "xamarin.androidx.camera.core/1.3.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "aar/androidx.camera.camera-core.aar",
+        "build/monoandroid12.0/Xamarin.AndroidX.Camera.Core.targets",
+        "build/net6.0-android31.0/Xamarin.AndroidX.Camera.Core.targets",
+        "build/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.Camera.Core.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Camera.Core.targets",
+        "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.targets",
+        "icon.png",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Camera.Core.dll",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Camera.Core.pdb",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Camera.Core.xml",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Camera.Core.dll",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Camera.Core.pdb",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Camera.Core.xml",
+        "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.dll",
+        "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.pdb",
+        "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Core.xml",
+        "proguard/proguard.txt",
+        "readme.md",
+        "xamarin.androidx.camera.core.1.3.1.1.nupkg.sha512",
+        "xamarin.androidx.camera.core.nuspec"
+      ]
+    },
+    "Xamarin.AndroidX.Camera.Lifecycle/1.3.1.1": {
+      "sha512": "8Zd22NhsZQ1nlIxZ13tk8WWXe6+ADvqIkz50h9QhK9OdTZCjCi/Zb8I8GMQOgMVItzBzu831fHh1eHKVilcBGQ==",
+      "type": "package",
+      "path": "xamarin.androidx.camera.lifecycle/1.3.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "aar/androidx.camera.camera-lifecycle.aar",
+        "build/monoandroid12.0/Xamarin.AndroidX.Camera.Lifecycle.targets",
+        "build/net6.0-android31.0/Xamarin.AndroidX.Camera.Lifecycle.targets",
+        "build/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.Camera.Lifecycle.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Camera.Lifecycle.targets",
+        "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.targets",
+        "icon.png",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Camera.Lifecycle.dll",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Camera.Lifecycle.pdb",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Camera.Lifecycle.xml",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Camera.Lifecycle.dll",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Camera.Lifecycle.pdb",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Camera.Lifecycle.xml",
+        "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.dll",
+        "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.pdb",
+        "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Lifecycle.xml",
+        "readme.md",
+        "xamarin.androidx.camera.lifecycle.1.3.1.1.nupkg.sha512",
+        "xamarin.androidx.camera.lifecycle.nuspec"
+      ]
+    },
+    "Xamarin.AndroidX.Camera.Video/1.3.1.1": {
+      "sha512": "fKD6eDOlCVdtLzGLxJyCXR5//c8h83wCxg37rqtS1FNJhNzZaL7CLVvQ5cwajM6NR6eaCC0zNElZ+9kxC/Qf9Q==",
+      "type": "package",
+      "path": "xamarin.androidx.camera.video/1.3.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "aar/androidx.camera.camera-video.aar",
+        "build/monoandroid12.0/Xamarin.AndroidX.Camera.Video.targets",
+        "build/net6.0-android31.0/Xamarin.AndroidX.Camera.Video.targets",
+        "build/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.Camera.Video.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Camera.Video.targets",
+        "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.targets",
+        "icon.png",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Camera.Video.dll",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Camera.Video.pdb",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Camera.Video.xml",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Camera.Video.dll",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Camera.Video.pdb",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Camera.Video.xml",
+        "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.dll",
+        "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.pdb",
+        "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.Video.xml",
+        "readme.md",
+        "xamarin.androidx.camera.video.1.3.1.1.nupkg.sha512",
+        "xamarin.androidx.camera.video.nuspec"
+      ]
+    },
+    "Xamarin.AndroidX.Camera.View/1.3.1.1": {
+      "sha512": "tZrpuMqptKbc4wQeQl+1uWIxI3Reiuc1LOqJHXWBjAjvkMRC9nYIOocmlIRfod/X1Tn/tnjvG7L02iQ8AA6gqA==",
+      "type": "package",
+      "path": "xamarin.androidx.camera.view/1.3.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "aar/androidx.camera.camera-view.aar",
+        "build/monoandroid12.0/Xamarin.AndroidX.Camera.View.targets",
+        "build/net6.0-android31.0/Xamarin.AndroidX.Camera.View.targets",
+        "build/net7.0-android33.0/Xamarin.AndroidX.Camera.View.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.Camera.View.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Camera.View.targets",
+        "buildTransitive/net7.0-android33.0/Xamarin.AndroidX.Camera.View.targets",
+        "icon.png",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Camera.View.dll",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Camera.View.pdb",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Camera.View.xml",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Camera.View.dll",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Camera.View.pdb",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Camera.View.xml",
+        "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.View.dll",
+        "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.View.pdb",
+        "lib/net7.0-android33.0/Xamarin.AndroidX.Camera.View.xml",
+        "readme.md",
+        "xamarin.androidx.camera.view.1.3.1.1.nupkg.sha512",
+        "xamarin.androidx.camera.view.nuspec"
       ]
     },
     "Xamarin.AndroidX.CardView/1.0.0.36": {
@@ -40846,6 +43818,28 @@
         "xamarin.google.android.material.nuspec"
       ]
     },
+    "Xamarin.Google.AutoValue.Annotations/1.10.4.3": {
+      "sha512": "NGbqySpfP5clKz9BRTjDWuQp6T8Hu/v2dvmlLzs9baZ0bo7ysXRBq0jVTIOeUT385rtAqhQjQ2mwc4Ie29vnpg==",
+      "type": "package",
+      "path": "xamarin.google.autovalue.annotations/1.10.4.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "lib/monoandroid12.0/Xamarin.Google.AutoValue.Annotations.dll",
+        "lib/monoandroid12.0/Xamarin.Google.AutoValue.Annotations.xml",
+        "lib/net6.0-android31.0/Xamarin.Google.AutoValue.Annotations.aar",
+        "lib/net6.0-android31.0/Xamarin.Google.AutoValue.Annotations.dll",
+        "lib/net6.0-android31.0/Xamarin.Google.AutoValue.Annotations.xml",
+        "lib/net7.0-android33.0/Xamarin.Google.AutoValue.Annotations.aar",
+        "lib/net7.0-android33.0/Xamarin.Google.AutoValue.Annotations.dll",
+        "lib/net7.0-android33.0/Xamarin.Google.AutoValue.Annotations.xml",
+        "readme.md",
+        "xamarin.google.autovalue.annotations.1.10.4.3.nupkg.sha512",
+        "xamarin.google.autovalue.annotations.nuspec"
+      ]
+    },
     "Xamarin.Google.Code.FindBugs.JSR305/3.0.2.21": {
       "sha512": "7vV5upoSB+npYC6UZGkLQANdn0nKlNG7lEGwrJgF9HLCCSQvhbwTuU25mQHDBVfhGTHKtiGKdlS44hOkips/6Q==",
       "type": "package",
@@ -41125,6 +44119,8 @@
   },
   "projectFileDependencyGroups": {
     "net10.0-android": [
+      "CommunityToolkit.Maui >= 9.0.0",
+      "CommunityToolkit.Maui.Camera >= 1.0.2",
       "FirebaseAdmin >= 3.5.0",
       "FirebaseDatabase.net >= 5.0.0",
       "Google.Cloud.Firestore >= 4.3.0",
@@ -41136,6 +44132,8 @@
       "OpenCvSharp4.runtime.win >= 4.13.0.20260627"
     ],
     "net10.0-ios": [
+      "CommunityToolkit.Maui >= 9.0.0",
+      "CommunityToolkit.Maui.Camera >= 1.0.2",
       "FirebaseAdmin >= 3.5.0",
       "FirebaseDatabase.net >= 5.0.0",
       "Google.Cloud.Firestore >= 4.3.0",
@@ -41147,6 +44145,8 @@
       "OpenCvSharp4.runtime.win >= 4.13.0.20260627"
     ],
     "net10.0-maccatalyst": [
+      "CommunityToolkit.Maui >= 9.0.0",
+      "CommunityToolkit.Maui.Camera >= 1.0.2",
       "FirebaseAdmin >= 3.5.0",
       "FirebaseDatabase.net >= 5.0.0",
       "Google.Cloud.Firestore >= 4.3.0",
@@ -41158,6 +44158,8 @@
       "OpenCvSharp4.runtime.win >= 4.13.0.20260627"
     ],
     "net10.0-windows10.0.19041.0": [
+      "CommunityToolkit.Maui >= 9.0.0",
+      "CommunityToolkit.Maui.Camera >= 1.0.2",
       "FirebaseAdmin >= 3.5.0",
       "FirebaseDatabase.net >= 5.0.0",
       "Google.Cloud.Firestore >= 4.3.0",
@@ -41240,6 +44242,14 @@
         "framework": "net10.0-android36.0",
         "targetAlias": "net10.0-android",
         "dependencies": {
+          "CommunityToolkit.Maui": {
+            "target": "Package",
+            "version": "[9.0.0, )"
+          },
+          "CommunityToolkit.Maui.Camera": {
+            "target": "Package",
+            "version": "[1.0.2, )"
+          },
           "FirebaseAdmin": {
             "target": "Package",
             "version": "[3.5.0, )"
@@ -41587,6 +44597,14 @@
         "framework": "net10.0-ios26.5",
         "targetAlias": "net10.0-ios",
         "dependencies": {
+          "CommunityToolkit.Maui": {
+            "target": "Package",
+            "version": "[9.0.0, )"
+          },
+          "CommunityToolkit.Maui.Camera": {
+            "target": "Package",
+            "version": "[1.0.2, )"
+          },
           "FirebaseAdmin": {
             "target": "Package",
             "version": "[3.5.0, )"
@@ -41934,6 +44952,14 @@
         "framework": "net10.0-maccatalyst26.5",
         "targetAlias": "net10.0-maccatalyst",
         "dependencies": {
+          "CommunityToolkit.Maui": {
+            "target": "Package",
+            "version": "[9.0.0, )"
+          },
+          "CommunityToolkit.Maui.Camera": {
+            "target": "Package",
+            "version": "[1.0.2, )"
+          },
           "FirebaseAdmin": {
             "target": "Package",
             "version": "[3.5.0, )"
@@ -42282,6 +45308,14 @@
         "framework": "net10.0-windows10.0.19041",
         "targetAlias": "net10.0-windows10.0.19041.0",
         "dependencies": {
+          "CommunityToolkit.Maui": {
+            "target": "Package",
+            "version": "[9.0.0, )"
+          },
+          "CommunityToolkit.Maui.Camera": {
+            "target": "Package",
+            "version": "[1.0.2, )"
+          },
           "FirebaseAdmin": {
             "target": "Package",
             "version": "[3.5.0, )"
