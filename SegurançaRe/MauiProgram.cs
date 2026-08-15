@@ -1,6 +1,5 @@
-﻿using CommunityToolkit.Maui;
-using CommunityToolkit.Maui.Core;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
+using CommunityToolkit.Maui;
 
 namespace SegurançaRe
 {
@@ -12,7 +11,7 @@ namespace SegurançaRe
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
-                .UseMauiCommunityToolkitCamera() // Inicializa o controle específico de câmera
+                .UseMauiCommunityToolkitCamera() // <-- ADICIONE ESTA LINHA AQUI
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

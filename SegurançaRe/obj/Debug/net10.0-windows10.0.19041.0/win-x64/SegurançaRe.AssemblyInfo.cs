@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SegurançaRe")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+c28557ac7c9901112585c7eb99dc7e82dad747aa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+7435e8ac1d1eb61c5c3ac4c02a1b59a0ab5d0a14")]
 [assembly: System.Reflection.AssemblyProductAttribute("SegurançaRe")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SegurançaRe")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
