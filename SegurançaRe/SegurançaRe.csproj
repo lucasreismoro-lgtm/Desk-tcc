@@ -65,9 +65,38 @@
 	  <MauiXaml Update="Cadastro.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="CameraPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="telausuario.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AndroidLibrary Remove="C:\Users\lucas\.nuget\packages\microsoft.ml.onnxruntime\1.29.0\buildTransitive\net9.0-android35.0\..\..\runtimes\android\native\onnxruntime.aar" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="CameraPage.xaml.cs">
+	    <DependentUpon>CameraPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AndroidLibrary Remove="C:\Users\lucas\.nuget\packages\microsoft.ml.onnxruntime\1.29.0\buildTransitive\net9.0-android35.0\..\..\runtimes\android\native\onnxruntime.aar" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AndroidLibrary Remove="C:\Users\lucas\.nuget\packages\microsoft.ml.onnxruntime\1.29.0\buildTransitive\net9.0-android35.0\..\..\runtimes\android\native\onnxruntime.aar" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AndroidLibrary Remove="C:\Users\lucas\.nuget\packages\microsoft.ml.onnxruntime\1.29.0\buildTransitive\net9.0-android35.0\..\..\runtimes\android\native\onnxruntime.aar" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AndroidLibrary Remove="C:\Users\lucas\.nuget\packages\microsoft.ml.onnxruntime\1.29.0\buildTransitive\net9.0-android35.0\..\..\runtimes\android\native\onnxruntime.aar" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -1,0 +1,54 @@
+<api>
+  <jcw-types>
+    <type name="CameraManager_FutureCallback" package="crc64f1558ff7e185dbfc" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="java.lang.Object" partial_assembly_qualified_name="CommunityToolkit.Maui.Core.CameraManager+FutureCallback, CommunityToolkit.Maui.Camera">
+      <implemented_interfaces>
+        <interface name="androidx.camera.core.impl.utils.futures.FutureCallback" />
+      </implemented_interfaces>
+      <constructors>
+        <constructor name="CameraManager_FutureCallback" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+      </constructors>
+      <methods>
+        <method name="onFailure" method="n_onFailure:(Ljava/lang/Throwable;)V:GetOnFailure_Ljava_lang_Throwable_Handler:AndroidX.Camera.Core.Impl.Utils.Futures.IFutureCallbackInvoker, Xamarin.AndroidX.Camera.Core" jni_signature="(Ljava/lang/Throwable;)V" params="java.lang.Throwable p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+        <method name="onSuccess" method="n_onSuccess:(Ljava/lang/Object;)V:GetOnSuccess_Ljava_lang_Object_Handler:AndroidX.Camera.Core.Impl.Utils.Futures.IFutureCallbackInvoker, Xamarin.AndroidX.Camera.Core" jni_signature="(Ljava/lang/Object;)V" params="java.lang.Object p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </methods>
+    </type>
+    <type name="CameraManager_ImageCallBack" package="crc64f1558ff7e185dbfc" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="androidx.camera.core.ImageCapture.OnImageCapturedCallback" partial_assembly_qualified_name="CommunityToolkit.Maui.Core.CameraManager+ImageCallBack, CommunityToolkit.Maui.Camera">
+      <constructors>
+        <constructor name="CameraManager_ImageCallBack" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+      </constructors>
+      <methods>
+        <method name="onCaptureSuccess" method="n_onCaptureSuccess:(Landroidx/camera/core/ImageProxy;)V:GetOnCaptureSuccess_Landroidx_camera_core_ImageProxy_Handler" jni_signature="(Landroidx/camera/core/ImageProxy;)V" params="androidx.camera.core.ImageProxy p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+        <method name="onError" method="n_onError:(Landroidx/camera/core/ImageCaptureException;)V:GetOnError_Landroidx_camera_core_ImageCaptureException_Handler" jni_signature="(Landroidx/camera/core/ImageCaptureException;)V" params="androidx.camera.core.ImageCaptureException p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </methods>
+    </type>
+    <type name="CameraManager_ResolutionFilter" package="crc64f1558ff7e185dbfc" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="java.lang.Object" partial_assembly_qualified_name="CommunityToolkit.Maui.Core.CameraManager+ResolutionFilter, CommunityToolkit.Maui.Camera">
+      <implemented_interfaces>
+        <interface name="androidx.camera.core.resolutionselector.ResolutionFilter" />
+      </implemented_interfaces>
+      <constructors>
+        <constructor name="CameraManager_ResolutionFilter" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+        <constructor name="CameraManager_ResolutionFilter" method="n_.ctor:(Landroid/util/Size;)V:" jni_signature="(Landroid/util/Size;)V" managed_parameters="Android.Util.Size, Mono.Android" params="android.util.Size p0" retval="void" is_dynamically_registered="True" super_call="" activate_call="p0" />
+      </constructors>
+      <methods>
+        <method name="filter" method="n_filter:(Ljava/util/List;I)Ljava/util/List;:GetFilter_Ljava_util_List_IHandler:AndroidX.Camera.Core.ResolutionSelector.IResolutionFilterInvoker, Xamarin.AndroidX.Camera.Core" jni_signature="(Ljava/util/List;I)Ljava/util/List;" params="java.util.List p0, int p1" retval="java.util.List" is_dynamically_registered="True" super_call="p0, p1" activate_call="p0, p1" />
+      </methods>
+    </type>
+    <type name="CameraManager_Observer" package="crc64f1558ff7e185dbfc" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="java.lang.Object" partial_assembly_qualified_name="CommunityToolkit.Maui.Core.CameraManager+Observer, CommunityToolkit.Maui.Camera">
+      <implemented_interfaces>
+        <interface name="androidx.lifecycle.Observer" />
+      </implemented_interfaces>
+      <constructors>
+        <constructor name="CameraManager_Observer" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+      </constructors>
+      <methods>
+        <method name="onChanged" method="n_onChanged:(Ljava/lang/Object;)V:GetOnChanged_Ljava_lang_Object_Handler:AndroidX.Lifecycle.IObserverInvoker, Xamarin.AndroidX.Lifecycle.LiveData.Core" jni_signature="(Ljava/lang/Object;)V" params="java.lang.Object p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </methods>
+    </type>
+  </jcw-types>
+  <acw-types partial-assembly-name="CommunityToolkit.Maui.Camera" module-name="CommunityToolkit.Maui.Camera.dll">
+    <type assembly-qualified-name="CommunityToolkit.Maui.Core.CameraManager+FutureCallback, CommunityToolkit.Maui.Camera, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="communitytoolkit.maui.core.CameraManager_FutureCallback" java-key="crc64f1558ff7e185dbfc.CameraManager_FutureCallback" managed-key="CommunityToolkit.Maui.Core.CameraManager.FutureCallback" partial-assembly-qualified-name="CommunityToolkit.Maui.Core.CameraManager+FutureCallback, CommunityToolkit.Maui.Camera" />
+    <type assembly-qualified-name="CommunityToolkit.Maui.Core.CameraManager+ImageCallBack, CommunityToolkit.Maui.Camera, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="communitytoolkit.maui.core.CameraManager_ImageCallBack" java-key="crc64f1558ff7e185dbfc.CameraManager_ImageCallBack" managed-key="CommunityToolkit.Maui.Core.CameraManager.ImageCallBack" partial-assembly-qualified-name="CommunityToolkit.Maui.Core.CameraManager+ImageCallBack, CommunityToolkit.Maui.Camera" />
+    <type assembly-qualified-name="CommunityToolkit.Maui.Core.CameraManager+ResolutionFilter, CommunityToolkit.Maui.Camera, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="communitytoolkit.maui.core.CameraManager_ResolutionFilter" java-key="crc64f1558ff7e185dbfc.CameraManager_ResolutionFilter" managed-key="CommunityToolkit.Maui.Core.CameraManager.ResolutionFilter" partial-assembly-qualified-name="CommunityToolkit.Maui.Core.CameraManager+ResolutionFilter, CommunityToolkit.Maui.Camera" />
+    <type assembly-qualified-name="CommunityToolkit.Maui.Core.CameraManager+Observer, CommunityToolkit.Maui.Camera, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="communitytoolkit.maui.core.CameraManager_Observer" java-key="crc64f1558ff7e185dbfc.CameraManager_Observer" managed-key="CommunityToolkit.Maui.Core.CameraManager.Observer" partial-assembly-qualified-name="CommunityToolkit.Maui.Core.CameraManager+Observer, CommunityToolkit.Maui.Camera" />
+  </acw-types>
+</api>

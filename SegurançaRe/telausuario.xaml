@@ -51,7 +51,7 @@
                                 FontAttributes="Bold" 
                                 CornerRadius="8" 
                                 HeightRequest="40" 
-                                Clicked="BtnSimularCameraYolo_Clicked" />
+                                Clicked="OnIniciarCameraClicked" />
                     </Grid>
                 </Frame>
 

@@ -421,9 +421,11 @@ namespace SegurançaRe
             }
         }
 
-        private async void BtnSimularCameraYolo_Clicked(object sender, EventArgs e)
+        private async void OnIniciarCameraClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CameraYoloPage());
+            // Navega para a página dedicada da Câmera
+            await Navigation.PushAsync(new CameraPage());
         }
+
     }
 }

@@ -1,0 +1,14 @@
+<api type="debug" assembly-name="CommunityToolkit.Maui.Core" mvid="0fa290c4a9e742baa6ab5dff093a6ea1">
+  <java-to-managed>
+    <entry java-name="crc64d6358e7bf64fbac4/SpeechToTextImplementation_SpeechRecognitionListener" managed-name="CommunityToolkit.Maui.Media.SpeechToTextImplementation+SpeechRecognitionListener, CommunityToolkit.Maui.Core" managed-type-token-id="33554534" />
+    <entry java-name="crc64159f3caeb1269279/MauiDrawingView" managed-name="CommunityToolkit.Maui.Core.Views.MauiDrawingView, CommunityToolkit.Maui.Core" managed-type-token-id="33554511" />
+    <entry java-name="crc64159f3caeb1269279/MauiPopup" managed-name="CommunityToolkit.Maui.Core.Views.MauiPopup, CommunityToolkit.Maui.Core" managed-type-token-id="33554513" />
+    <entry java-name="crc64159f3caeb1269279/MauiSemanticOrderView" managed-name="CommunityToolkit.Maui.Core.Views.MauiSemanticOrderView, CommunityToolkit.Maui.Core" managed-type-token-id="33554515" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc64d6358e7bf64fbac4/SpeechToTextImplementation_SpeechRecognitionListener" managed-name="CommunityToolkit.Maui.Media.SpeechToTextImplementation+SpeechRecognitionListener, CommunityToolkit.Maui.Core" managed-type-token-id="33554534" />
+    <entry java-name="crc64159f3caeb1269279/MauiDrawingView" managed-name="CommunityToolkit.Maui.Core.Views.MauiDrawingView, CommunityToolkit.Maui.Core" managed-type-token-id="33554511" />
+    <entry java-name="crc64159f3caeb1269279/MauiPopup" managed-name="CommunityToolkit.Maui.Core.Views.MauiPopup, CommunityToolkit.Maui.Core" managed-type-token-id="33554513" />
+    <entry java-name="crc64159f3caeb1269279/MauiSemanticOrderView" managed-name="CommunityToolkit.Maui.Core.Views.MauiSemanticOrderView, CommunityToolkit.Maui.Core" managed-type-token-id="33554515" />
+  </managed-to-java>
+</api>
