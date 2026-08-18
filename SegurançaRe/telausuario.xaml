@@ -90,7 +90,7 @@
                                FontAttributes="Bold" 
                                TextColor="#A6E3A1" />
 
-                        <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="*, *" ColumnSpacing="10" RowSpacing="10">
+                        <Grid RowDefinitions="Auto, Auto, Auto, Auto" ColumnDefinitions="*, *" ColumnSpacing="10" RowSpacing="10">
 
                             <Entry x:Name="TxtNovoNome" 
                                    Grid.Row="0" Grid.Column="0" 
@@ -125,6 +125,13 @@
                             <Entry x:Name="TxtNovoNumero" 
                                    Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
                                    Placeholder="Número / Complemento (ex: 68 ou Ap 12)" 
+                                   PlaceholderColor="#6C7086" 
+                                   TextColor="#CDD6F4" 
+                                   BackgroundColor="#1E1E2E" />
+
+                            <Entry x:Name="TxtNovoIdEsp" 
+                                   Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                                   Placeholder="ID / MAC do ESP8266 (ex: BC:DD:C2:BB:9A:A9)" 
                                    PlaceholderColor="#6C7086" 
                                    TextColor="#CDD6F4" 
                                    BackgroundColor="#1E1E2E" />

@@ -19,10 +19,12 @@ namespace SegurançaRe
         public string IdResidencia { get; set; } = string.Empty; // Código identificador da residência
         public string Cep { get; set; } = string.Empty; // CEP do imóvel
         public string Numres { get; set; } = string.Empty; // Número ou complemento do imóvel
+        public string IdEsp { get; set; } = string.Empty; // ID ou MAC Address do ESP8266 associado
         public List<MoradorModel> Moradores { get; set; } = new List<MoradorModel>(); // Lista de dependentes vinculados
 
         public string DetalhesResidencia => $"Residência: {IdResidencia} | Nº: {Numres} | CEP: {Cep}"; // Texto formatado da residência
         public string CpfFormatado => string.IsNullOrWhiteSpace(Cpf) ? "" : $"CPF: {Cpf}"; // CPF formatado para a UI
+        public string IdEspFormatado => string.IsNullOrWhiteSpace(IdEsp) ? "ESP: Não cadastrado" : $"ESP ID: {IdEsp}"; // Texto do ESP na UI
         public string TotalMoradoresTexto => $"Moradores cadastrados: {Moradores.Count}"; // Contador formatado de moradores
     }
 
@@ -133,6 +135,7 @@ namespace SegurançaRe
                         document.TryGetValue("id_residencia", out string idRes); // Extrai o ID da residência
                         document.TryGetValue("cep", out string cepDono); // Extrai o CEP
                         document.TryGetValue("numres", out string numresDono); // Extrai o número do imóvel
+                        document.TryGetValue("id_esp", out string idEspDono); // Extrai o ID do ESP8266
 
                         var novoDono = new DonoModel // Monta a model do Dono
                         {
@@ -140,7 +143,8 @@ namespace SegurançaRe
                             Cpf = cpfDono ?? document.Id, // Fallback para a chave primária
                             IdResidencia = idRes ?? "N/A", // Trata nulos
                             Cep = cepDono ?? "N/A", // Trata nulos
-                            Numres = numresDono ?? "N/A" // Trata nulos
+                            Numres = numresDono ?? "N/A", // Trata nulos
+                            IdEsp = idEspDono ?? "N/A" // Trata nulos
                         };
 
                         try
@@ -194,11 +198,13 @@ namespace SegurançaRe
             string cepRaw = TxtNovoCep.Text?.Trim(); // Trata o texto do CEP
             string codigoCasa = TxtNovoCodigoCasa.Text?.Trim(); // Trata o código da residência
             string numeroCasa = TxtNovoNumero.Text?.Trim(); // Trata o número do imóvel
+            string idEsp = TxtNovoIdEsp.Text?.Trim(); // Trata o ID/MAC do ESP8266
 
             if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(cpfRaw) ||
-                string.IsNullOrEmpty(cepRaw) || string.IsNullOrEmpty(codigoCasa) || string.IsNullOrEmpty(numeroCasa))
+                string.IsNullOrEmpty(cepRaw) || string.IsNullOrEmpty(codigoCasa) ||
+                string.IsNullOrEmpty(numeroCasa) || string.IsNullOrEmpty(idEsp))
             {
-                await DisplayAlert("Aviso", "Preencha todos os campos do formulário.", "OK"); // Valida preenchimento total
+                await DisplayAlert("Aviso", "Preencha todos os campos do formulário (incluindo o ID do ESP).", "OK"); // Valida preenchimento total
                 return;
             }
 
@@ -231,7 +237,8 @@ namespace SegurançaRe
                     { "cargo", "dono_da_casa" }, // Cargo do dono
                     { "id_residencia", codigoCasa }, // ID da casa
                     { "cep", cepLimpo }, // CEP sem pontuação
-                    { "numres", numeroCasa } // Número do imóvel
+                    { "numres", numeroCasa }, // Número do imóvel
+                    { "id_esp", idEsp } // ID/MAC Address da placa ESP8266
                 };
 
                 await docRef.SetAsync(novoUsuario); // Grava os dados do Dono no Firestore
@@ -243,7 +250,8 @@ namespace SegurançaRe
                 {
                     { "presencaAtivo", false },
                     { "calorAtivo", false },
-                    { "alarmeAtivo", false }
+                    { "alarmeAtivo", false },
+                    { "yoloPessoa", false }
                 };
 
                 await sensoresRef.SetAsync(estadoInicialSensores);
@@ -260,13 +268,14 @@ namespace SegurançaRe
 
                 await historicoRef.SetAsync(eventoInicialHistorico);
 
-                await DisplayAlert("Sucesso", $"Dono {nome} cadastrado com sucesso! Estruturas de Sensores e Histórico inicializadas.", "OK");
+                await DisplayAlert("Sucesso", $"Dono {nome} cadastrado com sucesso! ESP {idEsp} vinculado e estruturas inicializadas.", "OK");
 
                 TxtNovoNome.Text = string.Empty; // Limpa os campos de texto
                 TxtNovoCpf.Text = string.Empty;
                 TxtNovoCep.Text = string.Empty;
                 TxtNovoCodigoCasa.Text = string.Empty;
                 TxtNovoNumero.Text = string.Empty;
+                TxtNovoIdEsp.Text = string.Empty;
 
                 await CarregarDadosDashboard(); // Recarrega a lista
             }

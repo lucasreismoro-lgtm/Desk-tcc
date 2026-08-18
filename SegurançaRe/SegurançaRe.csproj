@@ -103,4 +103,8 @@
 	  <AndroidLibrary Remove="C:\Users\lucas\.nuget\packages\microsoft.ml.onnxruntime\1.29.0\buildTransitive\net9.0-android35.0\..\..\runtimes\android\native\onnxruntime.aar" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <AndroidLibrary Remove="C:\Users\lucas\.nuget\packages\microsoft.ml.onnxruntime\1.29.0\buildTransitive\net9.0-android35.0\..\..\runtimes\android\native\onnxruntime.aar" />
+	</ItemGroup>
+
 </Project>
