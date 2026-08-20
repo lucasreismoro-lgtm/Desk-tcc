@@ -204,80 +204,95 @@ namespace SegurançaRe
                 string.IsNullOrEmpty(cepRaw) || string.IsNullOrEmpty(codigoCasa) ||
                 string.IsNullOrEmpty(numeroCasa) || string.IsNullOrEmpty(idEsp))
             {
-                await DisplayAlert("Aviso", "Preencha todos os campos do formulário (incluindo o ID do ESP).", "OK"); // Valida preenchimento total
+                await DisplayAlert("Aviso", "Preencha todos os campos do formulário (incluindo o ID do ESP).", "OK");
                 return;
             }
 
             string cpfLimpo = Regex.Replace(cpfRaw, @"[^\d]", ""); // Filtra e deixa apenas números no CPF
             string cepLimpo = Regex.Replace(cepRaw, @"[^\d]", ""); // Filtra e deixa apenas números no CEP
 
-            if (cpfLimpo.Length != 11) // Validação de dígitos do CPF
+            if (cpfLimpo.Length != 11)
             {
-                await DisplayAlert("CPF Inválido", "O CPF deve conter 11 dígitos.", "OK"); // Alerta regra do CPF
+                await DisplayAlert("CPF Inválido", "O CPF deve conter 11 dígitos.", "OK");
                 return;
             }
 
             try
             {
-                Query queryCodigo = _db.Collection("Usuarios").WhereEqualTo("id_residencia", codigoCasa); // Consulta unicidade de casa
-                QuerySnapshot checkCodigo = await queryCodigo.GetSnapshotAsync(); // Executa a verificação
+                Query queryCodigo = _db.Collection("Usuarios").WhereEqualTo("id_residencia", codigoCasa);
+                QuerySnapshot checkCodigo = await queryCodigo.GetSnapshotAsync();
 
-                if (checkCodigo.Documents.Count > 0) // Impede código duplicado
+                if (checkCodigo.Documents.Count > 0)
                 {
-                    await DisplayAlert("Código Indisponível", $"O código '{codigoCasa}' já está sendo utilizado por outra residência.", "OK"); // Alerta duplicidade
+                    await DisplayAlert("Código Indisponível", $"O código '{codigoCasa}' já está sendo utilizado por outra residência.", "OK");
                     return;
                 }
 
-                DocumentReference docRef = _db.Collection("Usuarios").Document(cpfLimpo); // Referência com chave no CPF do Dono
+                DocumentReference docRef = _db.Collection("Usuarios").Document(cpfLimpo); // Documento principal do Dono
 
-                Dictionary<string, object> novoUsuario = new Dictionary<string, object> // Dicionário do Dono da Casa
-                {
-                    { "nome", nome }, // Nome completo
-                    { "cpf", cpfLimpo }, // CPF limpo
-                    { "cargo", "dono_da_casa" }, // Cargo do dono
-                    { "id_residencia", codigoCasa }, // ID da casa
-                    { "cep", cepLimpo }, // CEP sem pontuação
-                    { "numres", numeroCasa }, // Número do imóvel
-                    { "id_esp", idEsp } // ID/MAC Address da placa ESP8266
-                };
+                Dictionary<string, object> novoUsuario = new Dictionary<string, object>
+        {
+            { "nome", nome },
+            { "cpf", cpfLimpo },
+            { "cargo", "dono_da_casa" },
+            { "id_residencia", codigoCasa },
+            { "cep", cepLimpo },
+            { "numres", numeroCasa },
+            { "id_esp", idEsp }
+        };
 
-                await docRef.SetAsync(novoUsuario); // Grava os dados do Dono no Firestore
+                await docRef.SetAsync(novoUsuario);
 
                 // ====== 1. CRIAÇÃO AUTOMÁTICA DA SUBCOLEÇÃO "Sensores" ======
                 DocumentReference sensoresRef = docRef.Collection("Sensores").Document("estado");
 
                 Dictionary<string, object> estadoInicialSensores = new Dictionary<string, object>
-                {
-                    { "presencaAtivo", false },
-                    { "calorAtivo", false },
-                    { "alarmeAtivo", false },
-                    { "yoloPessoa", false }
-                };
+        {
+            { "presencaAtivo", false },
+            { "calorAtivo", false },
+            { "alarmeAtivo", false },
+            { "yoloPessoa", false }
+        };
 
                 await sensoresRef.SetAsync(estadoInicialSensores);
 
-                // ====== 2. CRIAÇÃO AUTOMÁTICA DA SUBCOLEÇÃO "Historico" ======
+                // ====== 2. CRIAÇÃO AUTOMÁTICA DA SUBCOLEÇÃO "Eventos" (ALERTAS E DETECÇÕES) ======
+                DocumentReference eventoRef = docRef.Collection("Eventos").Document(); // Cria um ID automático único para o evento
+
+                Dictionary<string, object> eventoInicial = new Dictionary<string, object>
+        {
+            { "sensor", "Sistema" },
+            { "local", "Central de Monitoramento" },
+            { "mensagem", "Sistema de alarme e detecção inicializado com sucesso." },
+            { "dataHora", FieldValue.ServerTimestamp },
+            { "disparado", false }
+        };
+
+                await eventoRef.SetAsync(eventoInicial);
+
+                // ====== 3. CRIAÇÃO AUTOMÁTICA DA SUBCOLEÇÃO "Historico" ======
                 DocumentReference historicoRef = docRef.Collection("Historico").Document();
 
                 Dictionary<string, object> eventoInicialHistorico = new Dictionary<string, object>
-                {
-                    { "tipo", "SISTEMA" },
-                    { "mensagem", "Sistema de segurança e registro de histórico inicializados." },
-                    { "dataHora", FieldValue.ServerTimestamp }
-                };
+        {
+            { "tipo", "SISTEMA" },
+            { "mensagem", "Sistema de segurança e registro de histórico inicializados." },
+            { "dataHora", FieldValue.ServerTimestamp }
+        };
 
                 await historicoRef.SetAsync(eventoInicialHistorico);
 
-                await DisplayAlert("Sucesso", $"Dono {nome} cadastrado com sucesso! ESP {idEsp} vinculado e estruturas inicializadas.", "OK");
+                await DisplayAlert("Sucesso", $"Dono {nome} cadastrado com sucesso! Subcoleções Sensores, Eventos e Histórico foram inicializadas.", "OK");
 
-                TxtNovoNome.Text = string.Empty; // Limpa os campos de texto
+                // Limpeza dos campos do formulário
+                TxtNovoNome.Text = string.Empty;
                 TxtNovoCpf.Text = string.Empty;
                 TxtNovoCep.Text = string.Empty;
                 TxtNovoCodigoCasa.Text = string.Empty;
                 TxtNovoNumero.Text = string.Empty;
                 TxtNovoIdEsp.Text = string.Empty;
 
-                await CarregarDadosDashboard(); // Recarrega a lista
+                await CarregarDadosDashboard();
             }
             catch (Exception ex)
             {

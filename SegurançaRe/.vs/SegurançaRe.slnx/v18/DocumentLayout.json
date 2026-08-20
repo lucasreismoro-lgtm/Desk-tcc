@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|c:\\users\\lucas\\onedrive\\documentos\\github\\desk-tcc\\seguran\u00E7are\\telausuario.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|solutionrelative:telausuario.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|c:\\users\\lucas\\onedrive\\documentos\\github\\desk-tcc\\seguran\u00E7are\\adminmenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|solutionrelative:adminmenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|c:\\users\\lucas\\onedrive\\documentos\\github\\desk-tcc\\seguran\u00E7are\\telausuario.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|solutionrelative:telausuario.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|c:\\users\\lucas\\onedrive\\documentos\\github\\desk-tcc\\seguran\u00E7are\\adminmenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|solutionrelative:adminmenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|c:\\users\\lucas\\onedrive\\documentos\\github\\desk-tcc\\seguran\u00E7are\\camerapage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -57,18 +57,17 @@
               "RelativeToolTip": "CameraPage.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-16T16:50:23.058Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-16T16:50:23.058Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "telausuario.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\telausuario.xaml.cs",
-              "RelativeDocumentMoniker": "telausuario.xaml.cs",
-              "ToolTip": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\telausuario.xaml.cs",
-              "RelativeToolTip": "telausuario.xaml.cs",
-              "ViewState": "AgIAAI8BAAAAAAAAAAAYwKgBAAARAAAAAAAAAA==",
+              "Title": "AdminMenu.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\AdminMenu.xaml.cs",
+              "RelativeDocumentMoniker": "AdminMenu.xaml.cs",
+              "ToolTip": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\AdminMenu.xaml.cs",
+              "RelativeToolTip": "AdminMenu.xaml.cs",
+              "ViewState": "AgIAAKEBAAAAAAAAAAAAwK4BAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-16T16:49:07.236Z",
               "EditorCaption": ""
@@ -100,15 +99,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "telausuario.xaml",
-              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\telausuario.xaml",
-              "RelativeDocumentMoniker": "telausuario.xaml",
-              "ToolTip": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\telausuario.xaml",
-              "RelativeToolTip": "telausuario.xaml",
+              "Title": "AdminMenu.xaml",
+              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\AdminMenu.xaml",
+              "RelativeDocumentMoniker": "AdminMenu.xaml",
+              "ToolTip": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\AdminMenu.xaml",
+              "RelativeToolTip": "AdminMenu.xaml",
               "ViewState": "AgIAANMAAAAAAAAAAAAkwAABAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-08-16T16:46:23.896Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-16T16:46:23.896Z"
             },
             {
               "$type": "Document",

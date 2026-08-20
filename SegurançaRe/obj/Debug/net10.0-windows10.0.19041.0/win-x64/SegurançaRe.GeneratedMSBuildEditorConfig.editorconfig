@@ -29,6 +29,16 @@ build_property.CsWinRTUseWindowsUIXamlProjections = false
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/Users/lucas/OneDrive/Documentos/GitHub/Desk-tcc/SegurançaRe/AdminMenu.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SegurançaRe.AdminMenu.xaml
+build_metadata.AdditionalFiles.TargetPath = AdminMenu.xaml
+build_metadata.AdditionalFiles.RelativePath = AdminMenu.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
 [C:/Users/lucas/OneDrive/Documentos/GitHub/Desk-tcc/SegurançaRe/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SegurançaRe.App.xaml
@@ -104,16 +114,6 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SegurançaRe.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
-build_metadata.AdditionalFiles.Inflator = SourceGen
-build_metadata.AdditionalFiles.NoWarn = 
-build_metadata.AdditionalFiles.EnableDiagnostics = 
-build_metadata.AdditionalFiles.LineInfo = 
-
-[C:/Users/lucas/OneDrive/Documentos/GitHub/Desk-tcc/SegurançaRe/telausuario.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = SegurançaRe.telausuario.xaml
-build_metadata.AdditionalFiles.TargetPath = telausuario.xaml
-build_metadata.AdditionalFiles.RelativePath = telausuario.xaml
 build_metadata.AdditionalFiles.Inflator = SourceGen
 build_metadata.AdditionalFiles.NoWarn = 
 build_metadata.AdditionalFiles.EnableDiagnostics = 

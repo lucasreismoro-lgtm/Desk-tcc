@@ -68,7 +68,7 @@
 	  <MauiXaml Update="CameraPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="telausuario.xaml">
+	  <MauiXaml Update="AdminMenu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
@@ -81,6 +81,13 @@
 	  <Compile Update="CameraPage.xaml.cs">
 	    <DependentUpon>CameraPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="AdminMenu.xaml.cs">
+	    <DependentUpon>AdminMenu.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AndroidLibrary Remove="C:\Users\lucas\.nuget\packages\microsoft.ml.onnxruntime\1.29.0\buildTransitive\net9.0-android35.0\..\..\runtimes\android\native\onnxruntime.aar" />
 	</ItemGroup>
 
 	<ItemGroup>
