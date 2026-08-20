@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|c:\\users\\lucas\\onedrive\\documentos\\github\\desk-tcc\\seguran\u00E7are\\resources\\raw\\conexao.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|solutionrelative:resources\\raw\\conexao.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|c:\\users\\lucas\\onedrive\\documentos\\github\\desk-tcc\\seguran\u00E7are\\adminmenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D51B80E0-EBA7-D8C0-AFE7-A78CFD9A114B}|Seguran\u00E7aRe.csproj|solutionrelative:adminmenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -45,11 +49,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "conexao.json",
+              "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\Resources\\Raw\\conexao.json",
+              "RelativeDocumentMoniker": "Resources\\Raw\\conexao.json",
+              "ToolTip": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\Resources\\Raw\\conexao.json",
+              "RelativeToolTip": "Resources\\Raw\\conexao.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-08-20T18:30:40.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "CameraPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\CameraPage.xaml.cs",
               "RelativeDocumentMoniker": "CameraPage.xaml.cs",
@@ -61,20 +78,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AdminMenu.xaml.cs",
               "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\AdminMenu.xaml.cs",
               "RelativeDocumentMoniker": "AdminMenu.xaml.cs",
               "ToolTip": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\AdminMenu.xaml.cs",
               "RelativeToolTip": "AdminMenu.xaml.cs",
-              "ViewState": "AgIAAKEBAAAAAAAAAAAAwK4BAABGAAAAAAAAAA==",
+              "ViewState": "AgIAAI8BAAAAAAAAAAAAwK4BAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-16T16:49:07.236Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Xamarin.Android.Aapt2.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\packs\\Microsoft.Android.Sdk.Windows\\36.1.69\\tools\\Xamarin.Android.Aapt2.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\packs\\Microsoft.Android.Sdk.Windows\\36.1.69\\tools\\Xamarin.Android.Aapt2.targets",
@@ -86,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CameraPage.xaml",
               "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\CameraPage.xaml",
               "RelativeDocumentMoniker": "CameraPage.xaml",
@@ -98,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AdminMenu.xaml",
               "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\AdminMenu.xaml",
               "RelativeDocumentMoniker": "AdminMenu.xaml",
@@ -110,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "bemvindo.xaml",
               "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\bemvindo.xaml",
               "RelativeDocumentMoniker": "bemvindo.xaml",
@@ -122,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Cadastro.xaml",
               "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\Cadastro.xaml",
               "RelativeDocumentMoniker": "Cadastro.xaml",
@@ -134,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "MauiProgram.cs",
               "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\MauiProgram.cs",
               "RelativeDocumentMoniker": "MauiProgram.cs",
@@ -146,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "App.g.i.cs",
               "DocumentMoniker": "C:\\Users\\lucas\\OneDrive\\Documentos\\GitHub\\Desk-tcc\\Seguran\u00E7aRe\\obj\\Debug\\net10.0-windows10.0.19041.0\\win-x64\\Platforms\\Windows\\App.g.i.cs",
               "RelativeDocumentMoniker": "obj\\Debug\\net10.0-windows10.0.19041.0\\win-x64\\Platforms\\Windows\\App.g.i.cs",
