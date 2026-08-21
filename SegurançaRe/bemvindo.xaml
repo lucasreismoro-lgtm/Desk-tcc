@@ -20,7 +20,7 @@
                     <Ellipse Fill="#22C55E" Opacity="0.4" WidthRequest="10" HeightRequest="10"/>
                     <Ellipse Fill="#22C55E" WidthRequest="6" HeightRequest="6" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Grid>
-                <Label Text="SISTEMA SEGURO E OPERACIONAL" TextColor="#22C55E" FontSize="11" FontAttributes="Bold" CharacterSpacing="1.5" VerticalOptions="Center"/>
+                <Label Text="SISTEMA ADMINS" TextColor="#22C55E" FontSize="11" FontAttributes="Bold" CharacterSpacing="1.5" VerticalOptions="Center"/>
             </HorizontalStackLayout>
 
             <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" Spacing="30">
@@ -39,8 +39,7 @@
 
                     <Label Text="🛡️" FontSize="70" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,5"/>
 
-                    <Label Text="📹" FontSize="20" HorizontalOptions="Start" VerticalOptions="Start" Margin="15,25,0,0" Opacity="0.8"/>
-                    <Label Text="🔔" FontSize="18" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,20,25" Opacity="0.8"/>
+           
                 </Grid>
 
                 <VerticalStackLayout Spacing="12" HorizontalOptions="Center">
@@ -51,18 +50,12 @@
                            HorizontalTextAlignment="Center"
                            CharacterSpacing="-0.5" />
 
-                    <Label Text="Proteja sua casa com inteligência"
+                    <Label Text="Protect your home."
                            TextColor="#FFFFFF"
                            FontSize="20"
                            FontAttributes="Bold"
                            HorizontalTextAlignment="Center" />
-
-                    <Label Text="Monitore câmeras, sensores e alarmes em tempo real de qualquer lugar."
-                           TextColor="#CBD5E1"
-                           FontSize="14"
-                           HorizontalTextAlignment="Center"
-                           Margin="20,0"
-                           LineHeight="1.3"/>
+                    
                 </VerticalStackLayout>
 
             </VerticalStackLayout>

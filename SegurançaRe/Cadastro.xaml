@@ -19,8 +19,8 @@
                 </HorizontalStackLayout>
 
                 <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" Spacing="15" Padding="10">
-                    <Label Text="🔐 ÁREA RESTRITA" TextColor="#EF4444" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center" CharacterSpacing="1"/>
-                    <Label Text="Este painel é de uso exclusivo dos administradores do sistema de segurança residencial." 
+                    <Label Text="AREA ADMIN" TextColor="#EF4444" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center" CharacterSpacing="1"/>
+                    <Label Text="Painel é de uso exclusivo dos administradores do sistema de segurança residencial." 
                            TextColor="#94A3B8" FontSize="13" HorizontalTextAlignment="Center" LineHeight="1.3"/>
                 </VerticalStackLayout>
 
@@ -32,7 +32,7 @@
 
                 <VerticalStackLayout Spacing="6">
                     <Label Text="Autenticação de Administrador" TextColor="White" FontSize="36" FontAttributes="Bold"/>
-                    <Label Text="Insira suas credenciais administrativas para gerenciar o sistema global." TextColor="#94A3B8" FontSize="15"/>
+                    <Label Text="Insira suas credenciais administrativas para gerenciar o sistema." TextColor="#94A3B8" FontSize="15"/>
                 </VerticalStackLayout>
 
                 <Border BackgroundColor="#1E293B" StrokeShape="RoundRectangle 16" StrokeThickness="0" Padding="45,40">
@@ -66,7 +66,7 @@
 
                         <HorizontalStackLayout HorizontalOptions="End" Spacing="15" Margin="0,20,0,0">
                             <Button Text="Limpar" BackgroundColor="#334155" TextColor="#E2E8F0" HeightRequest="46" Padding="25,0" Clicked="BtnLimpar_Clicked"/>
-                            <Button Text="🔓 ACESSAR PAINEL ADMIN" BackgroundColor="#2563EB" TextColor="White" FontAttributes="Bold" HeightRequest="46" Padding="35,0" Clicked="BtnLoginAdmin_Clicked"/>
+                            <Button Text="ACESSAR PAINEL ADMIN" BackgroundColor="#2563EB" TextColor="White" FontAttributes="Bold" HeightRequest="46" Padding="35,0" Clicked="BtnLoginAdmin_Clicked"/>
                         </HorizontalStackLayout>
 
                     </VerticalStackLayout>

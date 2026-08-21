@@ -8,6 +8,7 @@
 
     <Grid RowDefinitions="Auto, *">
 
+        <!-- CABEÇALHO DA TELA -->
         <Grid Grid.Row="0" ColumnDefinitions="*, Auto" Padding="20" BackgroundColor="#181825">
             <VerticalStackLayout Grid.Column="0" VerticalOptions="Center">
                 <Label Text="Painel Administrativo" 
@@ -32,6 +33,7 @@
         <ScrollView Grid.Row="1" Padding="20">
             <VerticalStackLayout Spacing="25">
 
+                <!-- CARD DA CÂMERA -->
                 <Frame BackgroundColor="#313244" CornerRadius="12" Padding="15" HasShadow="True">
                     <Grid ColumnDefinitions="*, Auto">
                         <VerticalStackLayout Grid.Column="0" VerticalOptions="Center" Spacing="2">
@@ -55,34 +57,38 @@
                     </Grid>
                 </Frame>
 
-                <Grid ColumnDefinitions="*, Auto" BackgroundColor="#313244" Padding="15" Margin="0">
-                    <HorizontalStackLayout Grid.Column="0" Spacing="15" VerticalOptions="Center">
-                        <Label x:Name="LblTotalUsuarios" 
-                               Text="00" 
-                               FontSize="32" 
-                               FontAttributes="Bold" 
-                               TextColor="#89B4FA" 
-                               VerticalOptions="Center" />
-                        <VerticalStackLayout VerticalOptions="Center">
-                            <Label Text="Casas Cadastradas" 
-                                   FontSize="16" 
+                <!-- CARD DE TOTAL DE CASAS -->
+                <Frame BackgroundColor="#313244" CornerRadius="12" Padding="15" HasShadow="True">
+                    <Grid ColumnDefinitions="*, Auto">
+                        <HorizontalStackLayout Grid.Column="0" Spacing="15" VerticalOptions="Center">
+                            <Label x:Name="LblTotalUsuarios" 
+                                   Text="00" 
+                                   FontSize="32" 
                                    FontAttributes="Bold" 
-                                   TextColor="#CDD6F4" />
-                            <Label Text="Total de donos registrados no Firestore" 
-                                   FontSize="12" 
-                                   TextColor="#A6ADC8" />
-                        </VerticalStackLayout>
-                    </HorizontalStackLayout>
+                                   TextColor="#89B4FA" 
+                                   VerticalOptions="Center" />
+                            <VerticalStackLayout VerticalOptions="Center">
+                                <Label Text="Casas Cadastradas" 
+                                       FontSize="16" 
+                                       FontAttributes="Bold" 
+                                       TextColor="#CDD6F4" />
+                                <Label Text="Total de donos registrados" 
+                                       FontSize="12" 
+                                       TextColor="#A6ADC8" />
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
 
-                    <Button Grid.Column="1" 
-                            Text="Atualizar" 
-                            BackgroundColor="#89B4FA" 
-                            TextColor="#11111B" 
-                            FontAttributes="Bold"
-                            CornerRadius="8"
-                            Clicked="BtnAtualizarDados_Clicked" />
-                </Grid>
+                        <Button Grid.Column="1" 
+                                Text="Atualizar" 
+                                BackgroundColor="#89B4FA" 
+                                TextColor="#11111B" 
+                                FontAttributes="Bold"
+                                CornerRadius="8"
+                                Clicked="BtnAtualizarDados_Clicked" />
+                    </Grid>
+                </Frame>
 
+                <!-- FORMULÁRIO DE CADASTRO -->
                 <Frame BackgroundColor="#313244" CornerRadius="12" Padding="20" HasShadow="True">
                     <VerticalStackLayout Spacing="15">
                         <Label Text="Cadastrar Novo Dono de Casa" 
@@ -90,7 +96,7 @@
                                FontAttributes="Bold" 
                                TextColor="#A6E3A1" />
 
-                        <Grid RowDefinitions="Auto, Auto, Auto, Auto" ColumnDefinitions="*, *" ColumnSpacing="10" RowSpacing="10">
+                        <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="*, *" ColumnSpacing="10" RowSpacing="10">
 
                             <Entry x:Name="TxtNovoNome" 
                                    Grid.Row="0" Grid.Column="0" 
@@ -128,17 +134,10 @@
                                    PlaceholderColor="#6C7086" 
                                    TextColor="#CDD6F4" 
                                    BackgroundColor="#1E1E2E" />
-
-                            <Entry x:Name="TxtNovoIdEsp" 
-                                   Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
-                                   Placeholder="ID / MAC do ESP8266 (ex: BC:DD:C2:BB:9A:A9)" 
-                                   PlaceholderColor="#6C7086" 
-                                   TextColor="#CDD6F4" 
-                                   BackgroundColor="#1E1E2E" />
                         </Grid>
 
                         <Button Text="Cadastrar Residência" 
-                                BackgroundColor="#A6E3A1" 
+                                BackgroundColor="#89B4FA" 
                                 TextColor="#11111B" 
                                 FontAttributes="Bold" 
                                 CornerRadius="8" 
@@ -147,109 +146,131 @@
                     </VerticalStackLayout>
                 </Frame>
 
-                <VerticalStackLayout Spacing="10">
-                    <Label Text="Residências e Moradores Cadastrados" 
-                           FontSize="18" 
-                           FontAttributes="Bold" 
-                           TextColor="#CDD6F4" />
+                <!-- LISTA DE RESIDÊNCIAS -->
+                <ListView x:Name="ListViewUsuarios" 
+                          HasUnevenRows="True" 
+                          SelectionMode="None" 
+                          SeparatorVisibility="None"
+                          BackgroundColor="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="local:DonoModel">
+                            <ViewCell>
+                                <Frame BackgroundColor="#313244" 
+                                       CornerRadius="10" 
+                                       Margin="0,5" 
+                                       Padding="15" 
+                                       HasShadow="False">
+                                    <VerticalStackLayout Spacing="10">
 
-                    <ListView x:Name="ListViewUsuarios" 
-                              HasUnevenRows="True" 
-                              SelectionMode="None" 
-                              SeparatorVisibility="None"
-                              BackgroundColor="Transparent">
-                        <ListView.ItemTemplate>
-                            <DataTemplate x:DataType="local:DonoModel">
-                                <ViewCell>
-                                    <Frame BackgroundColor="#313244" 
-                                           CornerRadius="10" 
-                                           Margin="0,5" 
-                                           Padding="15" 
-                                           HasShadow="False">
-                                        <VerticalStackLayout Spacing="10">
+                                        <!-- TOPO DO CARD: Dados do Dono + Botões Editar e Remover -->
+                                        <Grid ColumnDefinitions="*, Auto">
+                                            <VerticalStackLayout Grid.Column="0" Spacing="2">
+                                                <Label Text="{Binding Nome}" 
+                                                       FontSize="16" 
+                                                       FontAttributes="Bold" 
+                                                       TextColor="#89B4FA" />
+                                                <Label Text="{Binding CpfFormatado}" 
+                                                       FontSize="12" 
+                                                       TextColor="#A6ADC8" />
+                                                <Label Text="{Binding DetalhesResidencia}" 
+                                                       FontSize="12" 
+                                                       TextColor="#A6ADC8" />
+                                            </VerticalStackLayout>
 
-                                            <Grid ColumnDefinitions="*, Auto">
-                                                <VerticalStackLayout Grid.Column="0" Spacing="2">
-                                                    <Label Text="{Binding Nome}" 
-                                                           FontSize="16" 
-                                                           FontAttributes="Bold" 
-                                                           TextColor="#89B4FA" />
-                                                    <Label Text="{Binding CpfFormatado}" 
-                                                           FontSize="12" 
-                                                           TextColor="#A6ADC8" />
-                                                    <Label Text="{Binding DetalhesResidencia}" 
-                                                           FontSize="12" 
-                                                           TextColor="#A6ADC8" />
-                                                </VerticalStackLayout>
+                                            <HorizontalStackLayout Grid.Column="1" Spacing="6" VerticalOptions="Start">
+                                                <Button Text="Editar" 
+                                                        BackgroundColor="#89B4FA" 
+                                                        TextColor="#11111B" 
+                                                        FontSize="12"
+                                                        FontAttributes="Bold"
+                                                        HeightRequest="35"
+                                                        CornerRadius="6"
+                                                        CommandParameter="{Binding .}"
+                                                        Clicked="BtnEditarDono_Clicked" />
 
-                                                <Button Grid.Column="1" 
-                                                        Text="Remover" 
+                                                <Button Text="Remover" 
                                                         BackgroundColor="#F38BA8" 
                                                         TextColor="#11111B" 
                                                         FontSize="12"
+                                                        FontAttributes="Bold"
                                                         HeightRequest="35"
                                                         CornerRadius="6"
                                                         CommandParameter="{Binding Cpf}"
                                                         Clicked="BtnRemoverDono_Clicked" />
-                                            </Grid>
+                                            </HorizontalStackLayout>
+                                        </Grid>
 
-                                            <BoxView HeightRequest="1" Color="#45475A" Margin="0,5" />
+                                        <BoxView HeightRequest="1" Color="#45475A" Margin="0,5" />
 
-                                            <Grid ColumnDefinitions="*, Auto">
-                                                <Label Grid.Column="0" 
-                                                       Text="{Binding TotalMoradoresTexto}" 
-                                                       FontSize="13" 
-                                                       FontAttributes="Bold" 
-                                                       TextColor="#FAB387" 
-                                                       VerticalOptions="Center" />
+                                        <!-- CONTADOR + BOTÃO ADICIONAR MORADOR -->
+                                        <Grid ColumnDefinitions="*, Auto" VerticalOptions="Center">
+                                            <Label Grid.Column="0" 
+                                                   Text="{Binding TotalMoradoresTexto}" 
+                                                   FontSize="13" 
+                                                   FontAttributes="Bold" 
+                                                   TextColor="#FAB387" 
+                                                   VerticalOptions="Center" />
 
-                                                <Button Grid.Column="1" 
-                                                        Text="+ Morador" 
-                                                        BackgroundColor="#FAB387" 
-                                                        TextColor="#11111B" 
-                                                        FontSize="12"
-                                                        HeightRequest="32"
-                                                        CornerRadius="6"
-                                                        CommandParameter="{Binding .}"
-                                                        Clicked="BtnAdicionarMorador_Clicked" />
-                                            </Grid>
+                                            <Button Grid.Column="1" 
+                                                    Text="+ Morador" 
+                                                    BackgroundColor="#A6E3A1" 
+                                                    TextColor="#11111B" 
+                                                    FontSize="12"
+                                                    FontAttributes="Bold"
+                                                    HeightRequest="35"
+                                                    CornerRadius="6"
+                                                    CommandParameter="{Binding .}"
+                                                    Clicked="BtnAdicionarMorador_Clicked" /> 
+                                        </Grid>
 
-                                            <StackLayout BindableLayout.ItemsSource="{Binding Moradores}" Spacing="5" Margin="10,5,0,0">
-                                                <BindableLayout.ItemTemplate>
-                                                    <DataTemplate x:DataType="local:MoradorModel">
-                                                        <Grid ColumnDefinitions="*, Auto" Margin="0,2">
+                                        <!-- LISTA DE MORADORES DEPENDENTES -->
+                                        <StackLayout BindableLayout.ItemsSource="{Binding Moradores}" Spacing="5" Margin="10,5,0,0">
+                                            <BindableLayout.ItemTemplate>
+                                                <DataTemplate x:DataType="local:MoradorModel">
+                                                    <Grid ColumnDefinitions="*, Auto" Margin="0,2">
 
-                                                            <HorizontalStackLayout Grid.Column="0" Spacing="8" VerticalOptions="Center">
-                                                                <Label Text="•" TextColor="#A6E3A1" FontSize="14" VerticalOptions="Center" />
-                                                                <Label Text="{Binding Nome}" TextColor="#CDD6F4" FontSize="13" FontAttributes="Bold" VerticalOptions="Center" />
-                                                                <Label Text="-" TextColor="#6C7086" FontSize="13" VerticalOptions="Center" />
-                                                                <Label Text="{Binding Cpf}" TextColor="#A6ADC8" FontSize="12" VerticalOptions="Center" />
-                                                            </HorizontalStackLayout>
+                                                        <HorizontalStackLayout Grid.Column="0" Spacing="8" VerticalOptions="Center">
+                                                            <Label Text="•" TextColor="#A6E3A1" FontSize="14" VerticalOptions="Center" />
+                                                            <Label Text="{Binding Nome}" TextColor="#CDD6F4" FontSize="13" FontAttributes="Bold" VerticalOptions="Center" />
+                                                            <Label Text="-" TextColor="#6C7086" FontSize="13" VerticalOptions="Center" />
+                                                            <Label Text="{Binding Cpf}" TextColor="#A6ADC8" FontSize="12" VerticalOptions="Center" />
+                                                        </HorizontalStackLayout>
 
-                                                            <Button Grid.Column="1"
-                                                                    Text="✕"
+                                                        <HorizontalStackLayout Grid.Column="1" Spacing="4" VerticalOptions="Center">
+                                                            <Button Text="Editar"
+                                                                    BackgroundColor="#89B4FA"
+                                                                    TextColor="#11111B"
+                                                                    FontSize="11"
+                                                                    HeightRequest="26"
+                                                                    WidthRequest="30"
+                                                                    CornerRadius="4"
+                                                                    Padding="0"
+                                                                    CommandParameter="{Binding .}"
+                                                                    Clicked="BtnEditarMorador_Clicked" />
+
+                                                            <Button Text="Remover"
                                                                     BackgroundColor="#F38BA8"
                                                                     TextColor="#11111B"
                                                                     FontAttributes="Bold"
                                                                     FontSize="11"
-                                                                    HeightRequest="24"
-                                                                    WidthRequest="28"
+                                                                    HeightRequest="26"
+                                                                    WidthRequest="30"
                                                                     CornerRadius="4"
                                                                     Padding="0"
                                                                     CommandParameter="{Binding .}"
                                                                     Clicked="BtnRemoverMorador_Clicked" />
-                                                        </Grid>
-                                                    </DataTemplate>
-                                                </BindableLayout.ItemTemplate>
-                                            </StackLayout>
+                                                        </HorizontalStackLayout>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </BindableLayout.ItemTemplate>
+                                        </StackLayout>
 
-                                        </VerticalStackLayout>
-                                    </Frame>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </VerticalStackLayout>
+                                    </VerticalStackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
             </VerticalStackLayout>
         </ScrollView>

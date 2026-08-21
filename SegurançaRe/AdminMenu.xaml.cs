@@ -12,38 +12,35 @@ namespace SegurançaRe
 {
     // === CLASSES DE MODELO (MODELS / ESTRUTURA DE DADOS) ===
 
-    public class DonoModel // Modelo que representa o Dono de Casa/Responsável principal
+    public class DonoModel
     {
-        public string Nome { get; set; } = string.Empty; // Nome completo do responsável
-        public string Cpf { get; set; } = string.Empty; // CPF do dono (usado como ID no Firestore)
-        public string IdResidencia { get; set; } = string.Empty; // Código identificador da residência
-        public string Cep { get; set; } = string.Empty; // CEP do imóvel
-        public string Numres { get; set; } = string.Empty; // Número ou complemento do imóvel
-        public string IdEsp { get; set; } = string.Empty; // ID ou MAC Address do ESP8266 associado
-        public List<MoradorModel> Moradores { get; set; } = new List<MoradorModel>(); // Lista de dependentes vinculados
+        public string Nome { get; set; } = string.Empty;
+        public string Cpf { get; set; } = string.Empty;
+        public string IdResidencia { get; set; } = string.Empty;
+        public string Cep { get; set; } = string.Empty;
+        public string Numres { get; set; } = string.Empty;
+        public List<MoradorModel> Moradores { get; set; } = new List<MoradorModel>();
 
-        public string DetalhesResidencia => $"Residência: {IdResidencia} | Nº: {Numres} | CEP: {Cep}"; // Texto formatado da residência
-        public string CpfFormatado => string.IsNullOrWhiteSpace(Cpf) ? "" : $"CPF: {Cpf}"; // CPF formatado para a UI
-        public string IdEspFormatado => string.IsNullOrWhiteSpace(IdEsp) ? "ESP: Não cadastrado" : $"ESP ID: {IdEsp}"; // Texto do ESP na UI
-        public string TotalMoradoresTexto => $"Moradores cadastrados: {Moradores.Count}"; // Contador formatado de moradores
+        public string DetalhesResidencia => $"Residência: {IdResidencia} | Nº: {Numres} | CEP: {Cep}";
+        public string CpfFormatado => string.IsNullOrWhiteSpace(Cpf) ? "" : $"CPF: {Cpf}";
+        public string TotalMoradoresTexto => $"Moradores cadastrados: {Moradores.Count}";
     }
 
-    public class MoradorModel // Modelo que representa cada morador dependente
+    public class MoradorModel
     {
-        public string Nome { get; set; } = string.Empty; // Nome completo do morador dependente
-        public string Cpf { get; set; } = string.Empty; // CPF numérico do dependente
-        public string Email { get; set; } = string.Empty; // E-mail cadastrado do morador dependente
-        public string Cargo { get; set; } = "morador"; // Privilégio fixo do dependente no sistema
+        public string Nome { get; set; } = string.Empty;
+        public string Cpf { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Cargo { get; set; } = "morador";
     }
 
-    public class LogModel // Modelo para auditoria de eventos
+    public class LogModel
     {
-        public string Horario { get; set; } = string.Empty; // Data e hora do registro
-        public string Usuario { get; set; } = string.Empty; // Identificador do autor do evento
-        public string Acao { get; set; } = string.Empty; // Descrição da ação executada
+        public string Horario { get; set; } = string.Empty;
+        public string Usuario { get; set; } = string.Empty;
+        public string Acao { get; set; } = string.Empty;
     }
 
-    // Adaptador/Simulador Yolo auxiliar
     public class YoloSimulator
     {
         public async Task IniciarSimulacaoAsync()
@@ -54,162 +51,159 @@ namespace SegurançaRe
 
     // === CÓDIGO LÓGICO DA TELA (CODE-BEHIND / CONTROLADOR) ===
 
-    public partial class telausuario : ContentPage // Controlador associado ao layout XAML
+    public partial class telausuario : ContentPage
     {
-        private FirestoreDb? _db; // Instância de conexão do banco Firestore
+        private FirestoreDb? _db;
         private readonly YoloSimulator _simuladorYolo = new YoloSimulator();
 
-        public telausuario() // Construtor da página
+        public telausuario()
         {
-            InitializeComponent(); // Carrega os componentes gráficos da interface
+            InitializeComponent();
         }
 
-        protected override async void OnAppearing() // Evento disparado ao abrir a tela
+        protected override async void OnAppearing()
         {
-            base.OnAppearing(); // Mantém o comportamento base
-            await InicializarFirebaseEALeitura(); // Conecta no banco e lê os dados
+            base.OnAppearing();
+            await InicializarFirebaseEALeitura();
         }
 
-        private async Task InicializarFirebaseEALeitura() // Inicializa as credenciais do Firestore
+        private async Task InicializarFirebaseEALeitura()
         {
-            if (_db == null) // Executa apenas se ainda não houver conexão ativa
+            if (_db == null)
             {
                 try
                 {
-                    string jsonConteudo = string.Empty; // Variável auxiliar para o JSON de chave
+                    string jsonConteudo = string.Empty;
 
                     try
                     {
-                        using var stream = await FileSystem.OpenAppPackageFileAsync("conexao.json"); // Tenta abrir o JSON nos arquivos empacotados
-                        using var reader = new StreamReader(stream); // Prepara o leitor de texto
-                        jsonConteudo = await reader.ReadToEndAsync(); // Lê todo o conteúdo do JSON
+                        using var stream = await FileSystem.OpenAppPackageFileAsync("conexao.json");
+                        using var reader = new StreamReader(stream);
+                        jsonConteudo = await reader.ReadToEndAsync();
                     }
                     catch (FileNotFoundException)
                     {
-                        string pastaProjeto = AppDomain.CurrentDomain.BaseDirectory; // Pega o diretório do binário
-                        string caminhoAlternativo = Path.Combine(pastaProjeto, "..", "..", "..", "..", "..", "Resources", "Raw", "conexao.json"); // Caminho relativo de fallback
+                        string pastaProjeto = AppDomain.CurrentDomain.BaseDirectory;
+                        string caminhoAlternativo = Path.Combine(pastaProjeto, "..", "..", "..", "..", "..", "Resources", "Raw", "conexao.json");
 
-                        if (File.Exists(caminhoAlternativo)) // Se achar no caminho do projeto local
+                        if (File.Exists(caminhoAlternativo))
                         {
-                            jsonConteudo = await File.ReadAllTextAsync(caminhoAlternativo); // Lê o arquivo físico
+                            jsonConteudo = await File.ReadAllTextAsync(caminhoAlternativo);
                         }
                     }
 
-                    if (!string.IsNullOrEmpty(jsonConteudo)) // Se as credenciais foram carregadas
+                    if (!string.IsNullOrEmpty(jsonConteudo))
                     {
-                        FirestoreDbBuilder builder = new FirestoreDbBuilder // Configura o construtor da API
+                        FirestoreDbBuilder builder = new FirestoreDbBuilder
                         {
-                            ProjectId = "banco-tcc-dc633", // ID do projeto no Firebase
-                            JsonCredentials = jsonConteudo // Injeta a chave pública/privada JSON
+                            ProjectId = "banco-tcc-dc633",
+                            JsonCredentials = jsonConteudo
                         };
-                        _db = builder.Build(); // Conclui a construção da instância
+                        _db = builder.Build();
                     }
                 }
                 catch (Exception ex)
                 {
-                    await DisplayAlert("Erro de Conexão", "Não foi possível carregar as credenciais: " + ex.Message, "OK"); // Alerta de erro no JSON
-                    return; // Interrompe a execução
+                    await DisplayAlert("Erro de Conexão", "Não foi possível carregar as credenciais: " + ex.Message, "OK");
+                    return;
                 }
             }
 
-            await CarregarDadosDashboard(); // Alimenta a interface gráfica
+            await CarregarDadosDashboard();
         }
 
-        private async Task CarregarDadosDashboard() // Consulta no banco e renderiza os dados na tela
+        private async Task CarregarDadosDashboard()
         {
-            if (_db == null) return; // Aborta se o banco não estiver disponível
+            if (_db == null) return;
 
             try
             {
-                Query usuariosQuery = _db.Collection("Usuarios").WhereEqualTo("cargo", "dono_da_casa"); // Query filtrando apenas donos de casa
-                QuerySnapshot usuariosSnapshot = await usuariosQuery.GetSnapshotAsync(); // Puxa os dados atualizados
+                Query usuariosQuery = _db.Collection("Usuarios").WhereEqualTo("cargo", "dono_da_casa");
+                QuerySnapshot usuariosSnapshot = await usuariosQuery.GetSnapshotAsync();
 
-                List<DonoModel> listaDonos = new List<DonoModel>(); // Lista que armazenará as models para a UI
+                List<DonoModel> listaDonos = new List<DonoModel>();
 
-                foreach (DocumentSnapshot document in usuariosSnapshot.Documents) // Percorre cada dono encontrado
+                foreach (DocumentSnapshot document in usuariosSnapshot.Documents)
                 {
-                    if (document.Exists) // Garante que o documento é válido
+                    if (document.Exists)
                     {
-                        document.TryGetValue("nome", out string nomeDono); // Extrai o nome do dono
-                        document.TryGetValue("cpf", out string cpfDono); // Extrai o CPF do dono
-                        document.TryGetValue("id_residencia", out string idRes); // Extrai o ID da residência
-                        document.TryGetValue("cep", out string cepDono); // Extrai o CEP
-                        document.TryGetValue("numres", out string numresDono); // Extrai o número do imóvel
-                        document.TryGetValue("id_esp", out string idEspDono); // Extrai o ID do ESP8266
+                        document.TryGetValue("nome", out string? nomeDono);
+                        document.TryGetValue("cpf", out string? cpfDono);
+                        document.TryGetValue("id_residencia", out string? idRes);
+                        document.TryGetValue("cep", out string? cepDono);
+                        document.TryGetValue("numres", out string? numresDono);
 
-                        var novoDono = new DonoModel // Monta a model do Dono
+                        var novoDono = new DonoModel
                         {
-                            Nome = nomeDono ?? "Sem Nome", // Trata nulos com valor padrão
-                            Cpf = cpfDono ?? document.Id, // Fallback para a chave primária
-                            IdResidencia = idRes ?? "N/A", // Trata nulos
-                            Cep = cepDono ?? "N/A", // Trata nulos
-                            Numres = numresDono ?? "N/A", // Trata nulos
-                            IdEsp = idEspDono ?? "N/A" // Trata nulos
+                            Nome = nomeDono ?? "Sem Nome",
+                            Cpf = cpfDono ?? document.Id,
+                            IdResidencia = idRes ?? "N/A",
+                            Cep = cepDono ?? "N/A",
+                            Numres = numresDono ?? "N/A"
                         };
 
                         try
                         {
-                            QuerySnapshot moradoresSnapshot = await document.Reference.Collection("Moradores").GetSnapshotAsync(); // Busca subcoleção Moradores
+                            QuerySnapshot moradoresSnapshot = await document.Reference.Collection("Moradores").GetSnapshotAsync();
 
-                            foreach (DocumentSnapshot moradorDoc in moradoresSnapshot.Documents) // Itera os moradores do dono
+                            foreach (DocumentSnapshot moradorDoc in moradoresSnapshot.Documents)
                             {
                                 if (moradorDoc.Exists)
                                 {
-                                    moradorDoc.TryGetValue("nome", out string nomeMorador); // Extrai nome do morador
-                                    moradorDoc.TryGetValue("cpf", out string cpfMorador); // Extrai CPF do morador
-                                    moradorDoc.TryGetValue("email", out string emailMorador); // Extrai o E-mail do morador
+                                    moradorDoc.TryGetValue("nome", out string? nomeMorador);
+                                    moradorDoc.TryGetValue("cpf", out string? cpfMorador);
+                                    moradorDoc.TryGetValue("email", out string? emailMorador);
 
-                                    novoDono.Moradores.Add(new MoradorModel // Adiciona morador na lista interna do Dono
+                                    novoDono.Moradores.Add(new MoradorModel
                                     {
-                                        Nome = nomeMorador ?? "Morador sem Nome", // Valor padrão se nulo
-                                        Cpf = cpfMorador ?? moradorDoc.Id, // Fallback do CPF
-                                        Email = emailMorador ?? "Sem E-mail" // Resgata o e-mail ou fallback
+                                        Nome = nomeMorador ?? "Morador sem Nome",
+                                        Cpf = cpfMorador ?? moradorDoc.Id,
+                                        Email = emailMorador ?? "Sem E-mail"
                                     });
                                 }
                             }
                         }
-                        catch { /* Subcoleção sem documentos registrados */ }
+                        catch { /* Subcoleção vazia ou inexistente */ }
 
-                        listaDonos.Add(novoDono); // Insere o dono estruturado na lista
+                        listaDonos.Add(novoDono);
                     }
                 }
 
-                ListViewUsuarios.ItemsSource = null; // Zera a coleção da lista para atualizar o layout
-                ListViewUsuarios.ItemsSource = listaDonos; // Vincula a lista populada à UI
-                LblTotalUsuarios.Text = listaDonos.Count.ToString("D2"); // Formata e atualiza a métrica em 2 dígitos
+                ListViewUsuarios.ItemsSource = null;
+                ListViewUsuarios.ItemsSource = listaDonos;
+                LblTotalUsuarios.Text = listaDonos.Count.ToString("D2");
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Erro de Sincronização", "Erro ao processar estrutura do Firestore: " + ex.Message, "OK"); // Notifica falhas de consulta
+                await DisplayAlert("Erro de Sincronização", "Erro ao processar estrutura do Firestore: " + ex.Message, "OK");
             }
         }
 
-        private async void BtnAtualizarDados_Clicked(object sender, EventArgs e) // Clique do botão Recarregar
+        private async void BtnAtualizarDados_Clicked(object sender, EventArgs e)
         {
-            await CarregarDadosDashboard(); // Força nova busca na nuvem
+            await CarregarDadosDashboard();
         }
 
-        private async void BtnNovoDono_Clicked(object sender, EventArgs e) // Cadastro de novo Dono + Subcoleções
+        private async void BtnNovoDono_Clicked(object sender, EventArgs e)
         {
-            if (_db == null) return; // Cancela se sem conexão
+            if (_db == null) return;
 
-            string nome = TxtNovoNome.Text?.Trim(); // Trata o texto do nome
-            string cpfRaw = TxtNovoCpf.Text?.Trim(); // Trata o texto do CPF
-            string cepRaw = TxtNovoCep.Text?.Trim(); // Trata o texto do CEP
-            string codigoCasa = TxtNovoCodigoCasa.Text?.Trim(); // Trata o código da residência
-            string numeroCasa = TxtNovoNumero.Text?.Trim(); // Trata o número do imóvel
-            string idEsp = TxtNovoIdEsp.Text?.Trim(); // Trata o ID/MAC do ESP8266
+            string nome = TxtNovoNome.Text?.Trim() ?? string.Empty;
+            string cpfRaw = TxtNovoCpf.Text?.Trim() ?? string.Empty;
+            string cepRaw = TxtNovoCep.Text?.Trim() ?? string.Empty;
+            string codigoCasa = TxtNovoCodigoCasa.Text?.Trim() ?? string.Empty;
+            string numeroCasa = TxtNovoNumero.Text?.Trim() ?? string.Empty;
 
             if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(cpfRaw) ||
                 string.IsNullOrEmpty(cepRaw) || string.IsNullOrEmpty(codigoCasa) ||
-                string.IsNullOrEmpty(numeroCasa) || string.IsNullOrEmpty(idEsp))
+                string.IsNullOrEmpty(numeroCasa))
             {
-                await DisplayAlert("Aviso", "Preencha todos os campos do formulário (incluindo o ID do ESP).", "OK");
+                await DisplayAlert("Aviso", "Preencha todos os campos do formulário.", "OK");
                 return;
             }
 
-            string cpfLimpo = Regex.Replace(cpfRaw, @"[^\d]", ""); // Filtra e deixa apenas números no CPF
-            string cepLimpo = Regex.Replace(cepRaw, @"[^\d]", ""); // Filtra e deixa apenas números no CEP
+            string cpfLimpo = Regex.Replace(cpfRaw, @"[^\d]", "");
+            string cepLimpo = Regex.Replace(cepRaw, @"[^\d]", "");
 
             if (cpfLimpo.Length != 11)
             {
@@ -228,69 +222,60 @@ namespace SegurançaRe
                     return;
                 }
 
-                DocumentReference docRef = _db.Collection("Usuarios").Document(cpfLimpo); // Documento principal do Dono
+                DocumentReference docRef = _db.Collection("Usuarios").Document(cpfLimpo);
 
                 Dictionary<string, object> novoUsuario = new Dictionary<string, object>
-        {
-            { "nome", nome },
-            { "cpf", cpfLimpo },
-            { "cargo", "dono_da_casa" },
-            { "id_residencia", codigoCasa },
-            { "cep", cepLimpo },
-            { "numres", numeroCasa },
-            { "id_esp", idEsp }
-        };
+                {
+                    { "nome", nome },
+                    { "cpf", cpfLimpo },
+                    { "cargo", "dono_da_casa" },
+                    { "id_residencia", codigoCasa },
+                    { "cep", cepLimpo },
+                    { "numres", numeroCasa }
+                };
 
                 await docRef.SetAsync(novoUsuario);
 
-                // ====== 1. CRIAÇÃO AUTOMÁTICA DA SUBCOLEÇÃO "Sensores" ======
+                // Subcoleção: Sensores
                 DocumentReference sensoresRef = docRef.Collection("Sensores").Document("estado");
-
                 Dictionary<string, object> estadoInicialSensores = new Dictionary<string, object>
-        {
-            { "presencaAtivo", false },
-            { "calorAtivo", false },
-            { "alarmeAtivo", false },
-            { "yoloPessoa", false }
-        };
-
+                {
+                    { "presencaAtivo", false },
+                    { "calorAtivo", false },
+                    { "alarmeAtivo", false },
+                    { "yoloPessoa", false }
+                };
                 await sensoresRef.SetAsync(estadoInicialSensores);
 
-                // ====== 2. CRIAÇÃO AUTOMÁTICA DA SUBCOLEÇÃO "Eventos" (ALERTAS E DETECÇÕES) ======
-                DocumentReference eventoRef = docRef.Collection("Eventos").Document(); // Cria um ID automático único para o evento
-
+                // Subcoleção: Eventos
+                DocumentReference eventoRef = docRef.Collection("Eventos").Document();
                 Dictionary<string, object> eventoInicial = new Dictionary<string, object>
-        {
-            { "sensor", "Sistema" },
-            { "local", "Central de Monitoramento" },
-            { "mensagem", "Sistema de alarme e detecção inicializado com sucesso." },
-            { "dataHora", FieldValue.ServerTimestamp },
-            { "disparado", false }
-        };
-
+                {
+                    { "sensor", "Sistema" },
+                    { "local", "Central de Monitoramento" },
+                    { "mensagem", "Sistema de alarme e detecção inicializado com sucesso." },
+                    { "dataHora", FieldValue.ServerTimestamp },
+                    { "disparado", false }
+                };
                 await eventoRef.SetAsync(eventoInicial);
 
-                // ====== 3. CRIAÇÃO AUTOMÁTICA DA SUBCOLEÇÃO "Historico" ======
+                // Subcoleção: Histórico
                 DocumentReference historicoRef = docRef.Collection("Historico").Document();
-
                 Dictionary<string, object> eventoInicialHistorico = new Dictionary<string, object>
-        {
-            { "tipo", "SISTEMA" },
-            { "mensagem", "Sistema de segurança e registro de histórico inicializados." },
-            { "dataHora", FieldValue.ServerTimestamp }
-        };
-
+                {
+                    { "tipo", "SISTEMA" },
+                    { "mensagem", "Sistema de segurança e registro de histórico inicializados." },
+                    { "dataHora", FieldValue.ServerTimestamp }
+                };
                 await historicoRef.SetAsync(eventoInicialHistorico);
 
-                await DisplayAlert("Sucesso", $"Dono {nome} cadastrado com sucesso! Subcoleções Sensores, Eventos e Histórico foram inicializadas.", "OK");
+                await DisplayAlert("Sucesso", $"Dono {nome} cadastrado com sucesso!", "OK");
 
-                // Limpeza dos campos do formulário
                 TxtNovoNome.Text = string.Empty;
                 TxtNovoCpf.Text = string.Empty;
                 TxtNovoCep.Text = string.Empty;
                 TxtNovoCodigoCasa.Text = string.Empty;
                 TxtNovoNumero.Text = string.Empty;
-                TxtNovoIdEsp.Text = string.Empty;
 
                 await CarregarDadosDashboard();
             }
@@ -300,12 +285,74 @@ namespace SegurançaRe
             }
         }
 
-        private async void BtnAdicionarMorador_Clicked(object sender, EventArgs e) // Cadastro de Morador dependente + E-mail
+        // === EDIÇÃO DE DONO ===
+        private async void BtnEditarDono_Clicked(object sender, EventArgs e)
         {
             if (_db == null) return;
 
-            var botao = (Button)sender;
-            var donoSelecionado = botao.CommandParameter as DonoModel;
+            var button = sender as Button;
+            var dono = button?.CommandParameter as DonoModel;
+            if (dono == null) return;
+
+            string novoNome = await DisplayPromptAsync("Editar Dono", "Informe o novo nome:", initialValue: dono.Nome);
+            if (string.IsNullOrWhiteSpace(novoNome)) return;
+
+            string novoNumero = await DisplayPromptAsync("Editar Dono", "Informe o novo número/complemento:", initialValue: dono.Numres);
+            if (string.IsNullOrWhiteSpace(novoNumero)) return;
+
+            try
+            {
+                DocumentReference docRef = _db.Collection("Usuarios").Document(dono.Cpf);
+                Dictionary<string, object> atualizacao = new Dictionary<string, object>
+                {
+                    { "nome", novoNome.Trim() },
+                    { "numres", novoNumero.Trim() }
+                };
+
+                await docRef.UpdateAsync(atualizacao);
+                await DisplayAlert("Sucesso", "Dados do responsável atualizados!", "OK");
+                await CarregarDadosDashboard();
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Erro", $"Falha ao atualizar dados: {ex.Message}", "OK");
+            }
+        }
+
+        private async void BtnRemoverDono_Clicked(object sender, EventArgs e)
+        {
+            if (_db == null) return;
+
+            var botao = sender as Button;
+            string? cpfDonoParaRemover = botao?.CommandParameter as string;
+
+            if (string.IsNullOrWhiteSpace(cpfDonoParaRemover)) return;
+
+            bool confirmar = await DisplayAlert("Excluir Dono", $"Tem certeza de que deseja remover o Dono com CPF {cpfDonoParaRemover}?", "Sim, Deletar", "Cancelar");
+
+            if (confirmar)
+            {
+                try
+                {
+                    DocumentReference docRef = _db.Collection("Usuarios").Document(cpfDonoParaRemover);
+                    await docRef.DeleteAsync();
+
+                    await DisplayAlert("Sucesso", "Dono de Casa removido do sistema.", "OK");
+                    await CarregarDadosDashboard();
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Erro ao Remover", "Não foi possível remover o registro: " + ex.Message, "OK");
+                }
+            }
+        }
+
+        private async void BtnAdicionarMorador_Clicked(object sender, EventArgs e)
+        {
+            if (_db == null) return;
+
+            var botao = sender as Button;
+            var donoSelecionado = botao?.CommandParameter as DonoModel;
 
             if (donoSelecionado == null) return;
 
@@ -350,31 +397,60 @@ namespace SegurançaRe
             }
         }
 
-        private async void BtnRemoverDono_Clicked(object sender, EventArgs e) // Remoção física de Dono
+        // === EDIÇÃO DE MORADOR ===
+        private async void BtnEditarMorador_Clicked(object sender, EventArgs e)
         {
             if (_db == null) return;
 
-            var botao = (Button)sender;
-            string? cpfDonoParaRemover = botao.CommandParameter as string;
+            var button = sender as Button;
+            var morador = button?.CommandParameter as MoradorModel;
+            if (morador == null) return;
 
-            if (string.IsNullOrWhiteSpace(cpfDonoParaRemover)) return;
+            var parentView = button?.Parent as Element;
+            DonoModel? donoPai = null;
 
-            bool confirmar = await DisplayAlert("Excluir Dono", $"Tem certeza de que deseja remover o Dono com CPF {cpfDonoParaRemover}?", "Sim, Deletar", "Cancelar");
-
-            if (confirmar)
+            while (parentView != null)
             {
-                try
+                if (parentView.BindingContext is DonoModel dono)
                 {
-                    DocumentReference docRef = _db.Collection("Usuarios").Document(cpfDonoParaRemover);
-                    await docRef.DeleteAsync();
+                    donoPai = dono;
+                    break;
+                }
+                parentView = parentView.Parent;
+            }
 
-                    await DisplayAlert("Sucesso", "Dono de Casa removido do sistema.", "OK");
-                    await CarregarDadosDashboard();
-                }
-                catch (Exception ex)
+            if (donoPai == null || string.IsNullOrWhiteSpace(donoPai.Cpf))
+            {
+                await DisplayAlert("Erro", "Não foi possível localizar o Dono associado a este morador.", "OK");
+                return;
+            }
+
+            string novoNome = await DisplayPromptAsync("Editar Morador", "Informe o novo nome:", initialValue: morador.Nome);
+            if (string.IsNullOrWhiteSpace(novoNome)) return;
+
+            string novoEmail = await DisplayPromptAsync("Editar Morador", "Informe o novo e-mail:", initialValue: morador.Email, keyboard: Keyboard.Email);
+            if (string.IsNullOrWhiteSpace(novoEmail)) return;
+
+            try
+            {
+                DocumentReference moradorRef = _db.Collection("Usuarios")
+                                                  .Document(donoPai.Cpf)
+                                                  .Collection("Moradores")
+                                                  .Document(morador.Cpf);
+
+                Dictionary<string, object> atualizacao = new Dictionary<string, object>
                 {
-                    await DisplayAlert("Erro ao Remover", "Não foi possível remover o registro: " + ex.Message, "OK");
-                }
+                    { "nome", novoNome.Trim() },
+                    { "email", novoEmail.Trim().ToLower() }
+                };
+
+                await moradorRef.UpdateAsync(atualizacao);
+                await DisplayAlert("Sucesso", "Morador atualizado com sucesso!", "OK");
+                await CarregarDadosDashboard();
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Erro", $"Erro ao editar morador: {ex.Message}", "OK");
             }
         }
 
@@ -387,7 +463,6 @@ namespace SegurançaRe
 
             if (morador == null) return;
 
-            // Busca a model do Dono pai através do BindingContext do elemento ancestral
             var parentView = button?.Parent as Element;
             DonoModel? donoPai = null;
 
@@ -436,7 +511,10 @@ namespace SegurançaRe
             {
                 try
                 {
-                    Application.Current.MainPage = new NavigationPage(new bemvindo());
+                    if (Application.Current != null)
+                    {
+                        Application.Current.MainPage = new NavigationPage(new bemvindo());
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -447,9 +525,7 @@ namespace SegurançaRe
 
         private async void OnIniciarCameraClicked(object sender, EventArgs e)
         {
-            // Navega para a página dedicada da Câmera
             await Navigation.PushAsync(new CameraPage());
         }
-
     }
 }

@@ -1,0 +1,14 @@
+<api type="debug" assembly-name="CommunityToolkit.Maui.Camera" mvid="2e2b1867a7d047d0b14180f4193838bd">
+  <java-to-managed>
+    <entry java-name="crc64f1558ff7e185dbfc/CameraManager_FutureCallback" managed-name="CommunityToolkit.Maui.Core.CameraManager+FutureCallback, CommunityToolkit.Maui.Camera" managed-type-token-id="33554457" />
+    <entry java-name="crc64f1558ff7e185dbfc/CameraManager_ImageCallBack" managed-name="CommunityToolkit.Maui.Core.CameraManager+ImageCallBack, CommunityToolkit.Maui.Camera" managed-type-token-id="33554458" />
+    <entry java-name="crc64f1558ff7e185dbfc/CameraManager_ResolutionFilter" managed-name="CommunityToolkit.Maui.Core.CameraManager+ResolutionFilter, CommunityToolkit.Maui.Camera" managed-type-token-id="33554459" />
+    <entry java-name="crc64f1558ff7e185dbfc/CameraManager_Observer" managed-name="CommunityToolkit.Maui.Core.CameraManager+Observer, CommunityToolkit.Maui.Camera" managed-type-token-id="33554460" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc64f1558ff7e185dbfc/CameraManager_FutureCallback" managed-name="CommunityToolkit.Maui.Core.CameraManager+FutureCallback, CommunityToolkit.Maui.Camera" managed-type-token-id="33554457" />
+    <entry java-name="crc64f1558ff7e185dbfc/CameraManager_ImageCallBack" managed-name="CommunityToolkit.Maui.Core.CameraManager+ImageCallBack, CommunityToolkit.Maui.Camera" managed-type-token-id="33554458" />
+    <entry java-name="crc64f1558ff7e185dbfc/CameraManager_ResolutionFilter" managed-name="CommunityToolkit.Maui.Core.CameraManager+ResolutionFilter, CommunityToolkit.Maui.Camera" managed-type-token-id="33554459" />
+    <entry java-name="crc64f1558ff7e185dbfc/CameraManager_Observer" managed-name="CommunityToolkit.Maui.Core.CameraManager+Observer, CommunityToolkit.Maui.Camera" managed-type-token-id="33554460" />
+  </managed-to-java>
+</api>
